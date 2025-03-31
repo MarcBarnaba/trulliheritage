@@ -9,8 +9,8 @@
 <script setup lang="ts">
 const props = withDefaults(
   defineProps<{
-    width: number;
-    height: number;
+    width?: number;
+    height?: number;
   }>(),
   {
     width: 132,
