@@ -4,7 +4,7 @@
     viewBox="0 0 200 200"
     xmlns="http://www.w3.org/2000/svg"
     :width="132"
-  :height="132"
+    :height="132"
   >
     <path
       fill="#89B0AE"

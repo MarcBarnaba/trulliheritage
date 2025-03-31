@@ -5,7 +5,6 @@
       <Paragraph :title="'F.A.Q.'" :title-size="'4xl'">
         <IconsGold />
       </Paragraph>
-
     </div>
 
   </div>

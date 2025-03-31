@@ -11,10 +11,12 @@
   },
   "dependencies": {
     "@nuxt/image": "^1.8.0",
-    "@nuxtjs/leaflet": "^1.2.3",
+    "@nuxtjs/i18n": "^9.0.0-rc.2",
     "@nuxtjs/tailwindcss": "^6.12.0",
+    "@vuepic/vue-datepicker": "^9.0.3",
+    "ical-generator": "^8.1.1",
+    "ical.js": "^2.1.0",
     "nuxt": "^3.12.1",
-    "nuxt-maplibre": "^1.0.0",
     "vue": "^3.4.27",
     "vue-router": "^4.3.3"
   }

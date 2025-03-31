@@ -1,0 +1,34 @@
+{
+  "menu.trulli": "Trulli",
+  "menu.about": "Chi Siamo",
+  "menu.contact": "Contatti",
+
+  "hero.title": "Trulli Heritage",
+  "hero.tagline": "Dove il passato incontra il presente",
+  "hero.btn": "Esplora i Trulli",
+  "ourStory.title": "Il Nostro Racconto",
+  "ourStory.description": "Da generazioni, i trulli sono il cuore pulsante della nostra famiglia. Oggi, trasformiamo questo patrimonio in un'esperienza unica, unendo tradizione, autenticità e innovazione.",
+  "ourStory.btn": "La nostra storia",
+  "structures.title": "I Nostri Trulli",
+  "structures.btn": "Scopri di più",
+  "city.title": "Vivi Alberobello",
+  "city.description": "Alberobello, capitale dei trulli, è molto più di un luogo: è un viaggio nel tempo, dove ogni vicolo racconta storie antiche e ogni angolo rivela un segreto.",
+  "city.btn": "Scopri Alberobello",
+  "cta.title": "Prenota il Tuo Sogno",
+  "cta.description": "Pronto a vivere un'esperienza indimenticabile? Contattaci o prenota ora il tuo soggiorno in un trullo unico.",
+  "cta.btn": "Prenota Ora",
+
+  "mainParagraph.title": "Discover AL 13",
+  "mainParagraph.paragraph": "Nestled in the heart of Alberobello, AL 13 offers a charming and serene retreat for travelers looking to experience the beauty of this iconic town. This cozy vacation home provides a tranquil atmosphere while being steps away from the town's famous trulli. Immerse yourself in the history and culture of Alberobello while enjoying a memorable stay in this hidden gem!",
+
+  "cta.bookNow": "Book Now",
+
+  "footer.aboutUs.title": "Chi Siamo",
+  "footer.aboutUs.text": "We’re Greta and Marco, siblings born and raised in Alberobello. We love sharing the beauty of Puglia and the heritage passed down to us with fellow travelers. No matter where our journeys take us, our hearts will always remain among the trulli. We invite you to experience the magic of our home with us!",
+  "footer.contactUs": "Contattaci",
+  "footer.email.key": "Email:",
+  "footer.email.value": "barnabacostruzionisrl{'@'}gmail.com",
+  "footer.phone.key": "Phone:",
+  "footer.phone.value": "+39 320 9461 831",
+  "footer.copyright": "Made with love by Marco"
+}
