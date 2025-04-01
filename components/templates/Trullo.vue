@@ -2,23 +2,23 @@
     <div class="">
         <!-- Hero Slim Section -->
         <section class="relative h-64 md:h-80 overflow-hidden">
-            <img :src="trullo.coverImage || '/api/placeholder/1200/400'" alt="Vista del trullo"
+            <img :src="trullo?.coverImage || '/api/placeholder/1200/400'" alt="Vista del trullo"
                 class="w-full h-full object-cover" />
             <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black/60"></div>
             <div class="absolute bottom-0 left-0 w-full p-8 text-white">
                 <div class="container">
-                    <h1 class="text-3xl md:text-4xl font-bold">{{ trullo.name }}</h1>
+                    <h1 class="text-3xl md:text-4xl font-bold">{{ trullo?.name }}</h1>
                     <div class="flex items-center mt-2">
                         <span class="flex items-center">
                             <span class="material-icons text-amber-400 text-sm">star</span>
-                            <span class="ml-1">{{ trullo.rating }}</span>
+                            <span class="ml-1">{{ trullo?.rating }}</span>
                             <span class="mx-1">·</span>
-                            <span>{{ trullo.reviewsCount }} recensioni</span>
+                            <span>{{ trullo?.reviewsCount }} recensioni</span>
                         </span>
                         <span class="mx-3">|</span>
                         <span class="flex items-center">
                             <span class="material-icons text-white text-sm">location_on</span>
-                            <span class="ml-1">{{ trullo.location }}</span>
+                            <span class="ml-1">{{ trullo?.location }}</span>
                         </span>
                     </div>
                 </div>
@@ -26,15 +26,14 @@
         </section>
 
         <!-- Descrizione (usando il componente Paragraph) -->
-        <Paragraph align="left" :title="'Descrizione'" :paragraph="trullo.description" title-size="2xl">
+        <Paragraph align="left" :title="'Descrizione'" :paragraph="trullo?.description" title-size="2xl">
             <template #default>
                 <IconsMint />
             </template>
         </Paragraph>
 
-
         <!-- ImageGrid Component (Fullwidth) -->
-        <ImageGrid :images="trullo.images" class="py-8" />
+        <ImageGrid :images="trullo?.images ?? []" class="py-8" />
 
         <div class="container mx-auto px-8 pb-8">
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -49,7 +48,7 @@
                             <div class="border rounded-lg p-4">
                                 <h3 class="text-lg font-medium mb-4">Info per la notte</h3>
                                 <ul class="space-y-3">
-                                    <li v-for="(info, index) in trullo.nightInfo" :key="`night-${index}`"
+                                    <li v-for="(info, index) in trullo?.nightInfo" :key="`night-${index}`"
                                         class="flex items-center">
                                         <span class="material-icons text-gray-600 mr-2">{{ info.icon }}</span>
                                         <span>{{ info.text }}</span>
@@ -61,7 +60,7 @@
                             <div class="border rounded-lg p-4">
                                 <h3 class="text-lg font-medium mb-4">Servizi</h3>
                                 <ul class="space-y-3">
-                                    <li v-for="(service, index) in trullo.services" :key="`service-${index}`"
+                                    <li v-for="(service, index) in trullo?.services" :key="`service-${index}`"
                                         class="flex items-center">
                                         <span class="material-icons text-gray-600 mr-2">{{ service.icon }}</span>
                                         <span>{{ service.text }}</span>
@@ -73,7 +72,7 @@
                             <div class="border rounded-lg p-4">
                                 <h3 class="text-lg font-medium mb-4">Amenities</h3>
                                 <ul class="space-y-3">
-                                    <li v-for="(amenity, index) in trullo.amenities" :key="`amenity-${index}`"
+                                    <li v-for="(amenity, index) in trullo?.amenities" :key="`amenity-${index}`"
                                         class="flex items-center">
                                         <span class="material-icons text-gray-600 mr-2">{{ amenity.icon }}</span>
                                         <span>{{ amenity.text }}</span>
@@ -90,7 +89,7 @@
                             <div>
                                 <h3 class="text-xl font-semibold mb-4">Regole della struttura</h3>
                                 <ul class="space-y-2">
-                                    <li v-for="(rule, index) in trullo.rules" :key="`rule-${index}`"
+                                    <li v-for="(rule, index) in trullo?.rules" :key="`rule-${index}`"
                                         class="flex items-start">
                                         <span class="material-icons text-gray-600 mr-2 mt-0.5">{{ rule.allowed ?
                                             'check_circle' : 'cancel' }}</span>
@@ -103,7 +102,7 @@
                             <div>
                                 <h3 class="text-xl font-semibold mb-4">Info utili</h3>
                                 <ul class="space-y-2">
-                                    <li v-for="(info, index) in trullo.usefulInfo" :key="`info-${index}`"
+                                    <li v-for="(info, index) in trullo?.usefulInfo" :key="`info-${index}`"
                                         class="flex items-start">
                                         <span class="material-icons text-gray-600 mr-2 mt-0.5">info</span>
                                         <span>{{ info.text }}</span>
@@ -115,15 +114,15 @@
                             <div class="col-span-full">
                                 <h3 class="text-xl font-semibold mb-4">Informazioni sulla proprietà</h3>
                                 <div class="flex items-center mb-4">
-                                    <img :src="trullo.owner.avatar || 'https://avatar.iran.liara.run/public/5'"
+                                    <img :src="trullo?.owner.avatar || 'https://avatar.iran.liara.run/public/5'"
                                         alt="Proprietario" class="w-12 h-12 rounded-full mr-3" />
 
                                     <div>
-                                        <p class="font-medium">{{ trullo.owner.name }}</p>
-                                        <p class="text-sm text-gray-600">Proprietario dal {{ trullo.owner.since }}</p>
+                                        <p class="font-medium">{{ trullo?.owner.name }}</p>
+                                        <p class="text-sm text-gray-600">Proprietario dal {{ trullo?.owner.since }}</p>
                                     </div>
                                 </div>
-                                <p class="text-gray-700">{{ trullo.owner.description }}</p>
+                                <p class="text-gray-700">{{ trullo?.owner.description }}</p>
                             </div>
                         </div>
 
@@ -169,8 +168,8 @@
                 <div>
                     <!-- Componente verifica disponibilità e contatto host -->
                     <div class="bg-white rounded-lg shadow-md p-6 sticky top-[100px]">
-                        <div v-if="trullo.pricePerNight" class="flex items-baseline justify-between mb-4">
-                            <span class="text-2xl font-bold">€{{ trullo.pricePerNight }}</span>
+                        <div v-if="trullo?.pricePerNight" class="flex items-baseline justify-between mb-4">
+                            <span class="text-2xl font-bold">€{{ trullo?.pricePerNight }}</span>
                             <span class="text-gray-600">a notte</span>
                         </div>
 
@@ -216,56 +215,12 @@
 </template>
 
 <script setup lang="ts">
+import type { TrulloType } from '~/types/trullo';
 
-interface NightInfo {
-    icon: string;
-    text: string;
-}
 
-interface Service {
-    icon: string;
-    text: string;
-}
-
-interface Amenity {
-    icon: string;
-    text: string;
-}
-
-interface Rule {
-    allowed: boolean;
-    text: string;
-}
-
-interface UsefulInfo {
-    text: string;
-}
-
-interface Owner {
-    name: string;
-    avatar?: string;
-    since: string;
-    description: string;
-    phone: string;
-}
-
-interface Trullo {
-    id: string;
-    name: string;
-    coverImage?: string;
-    images: string[];
-    rating: number;
-    reviewsCount: number;
-    location: string;
-    pricePerNight?: number;
-    description: string;
-    nightInfo: NightInfo[];
-    services: Service[];
-    amenities: Amenity[];
-    rules: Rule[];
-    usefulInfo: UsefulInfo[];
-    owner: Owner;
-}
+const props = defineProps<{
+    trullo: TrulloType
+}>();
 
 interface AvailabilityPeriod {
     period: string;
@@ -277,67 +232,7 @@ const checkIn = ref(new Date().toISOString().split('T')[0]);
 const checkOut = ref(new Date(Date.now() + 7 * 24 * 60 * 60 * 1000).toISOString().split('T')[0]);
 const guests = ref('2');
 
-// Esempio di disponibilità recenti
-const recentAvailability = ref<AvailabilityPeriod[]>([
-    { period: '15 Apr - 22 Apr', available: true },
-    { period: '1 Mag - 8 Mag', available: true },
-    { period: '20 Mag - 27 Mag', available: false },
-    { period: '10 Giu - 17 Giu', available: true },
-]);
 
-// Dati di esempio - in un'applicazione reale sarebbero caricati da un'API
-const trullo: Trullo = {
-    id: '123',
-    name: 'Trullo Romantico con Piscina',
-    rating: 4.9,
-    reviewsCount: 128,
-    location: 'Alberobello, Puglia',
-    // pricePerNight: 120,
-    description: `Questo autentico trullo pugliese è stato completamente ristrutturato per offrirti un soggiorno indimenticabile nel cuore della Valle d'Itria.
-  
-  Immerso tra ulivi secolari, offre privacy assoluta e un ambiente rilassante, perfetto per una fuga romantica o una vacanza familiare.
-  
-  Il trullo dispone di due camere da letto arredate con gusto, un bagno moderno, una cucina completamente attrezzata e un ampio soggiorno con camino. All'esterno, potrai goderti la piscina privata, una zona pranzo all'aperto e un barbecue.`,
-    coverImage: "/13/PHOTO-2024-05-07-13-40-52.jpg",
-    images: [
-        "/13/577082261.jpg",
-        "/13/577082264.jpg",
-        "/13/PHOTO-2024-05-07-13-40-52 8.jpg",
-        "/13/PHOTO-2024-05-07-13-40-52.jpg",
-    ],
-    nightInfo: [
-        { icon: 'people_alt', text: '4 ospiti' },
-        { icon: 'hotel', text: '2 camere da letto' },
-        { icon: 'bathtub', text: '1 bagno' },
-    ],
-    services: [
-        { icon: 'wifi', text: 'Wi-Fi gratuito' },
-        { icon: 'ac_unit', text: 'Aria condizionata' },
-        { icon: 'local_parking', text: 'Parcheggio gratuito' },
-    ],
-    amenities: [
-        { icon: 'pool', text: 'Piscina privata' },
-        { icon: 'fireplace', text: 'Camino' },
-        { icon: 'outdoor_grill', text: 'Barbecue' },
-    ],
-    rules: [
-        { allowed: true, text: 'Check-in dalle 15:00 alle 20:00' },
-        { allowed: true, text: 'Check-out entro le 10:00' },
-        { allowed: false, text: 'Non è permesso fumare' },
-        { allowed: false, text: 'Gli animali non sono ammessi' },
-    ],
-    usefulInfo: [
-        { text: 'A 10 minuti di auto dal centro di Alberobello' },
-        { text: 'Possibilità di organizzare tour della regione' },
-        { text: 'Kit di benvenuto con prodotti locali' },
-    ],
-    owner: {
-        name: 'Marco Rossi',
-        since: '2018',
-        phone: '+393331234567',
-        description: 'Ciao, sono Marco! Amo la Puglia e sarò felice di darti consigli sui posti da visitare e le specialità da assaggiare durante il tuo soggiorno.'
-    }
-};
 
 // Funzione per verificare la disponibilità
 const checkAvailability = () => {
@@ -349,9 +244,9 @@ const checkAvailability = () => {
 // Funzione per generare il link WhatsApp
 const getWhatsAppLink = () => {
     const message = encodeURIComponent(
-        `Ciao ${trullo.owner.name}, sono interessato al tuo "${trullo.name}" ` +
+        `Ciao ${props.trullo.owner.name}, sono interessato al tuo "${props.trullo.name}" ` +
         `dal ${checkIn.value} al ${checkOut.value} per ${guests.value} ospiti. È disponibile?`
     );
-    return `https://wa.me/${trullo.owner.phone.replace(/\+/g, '')}?text=${message}`;
+    return `https://wa.me/${props.trullo.owner.phone.replace(/\+/g, '')}?text=${message}`;
 };
 </script>

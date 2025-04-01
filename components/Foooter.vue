@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-darkblue text-white pt-8 pb-2 w-full">
+  <div id="footer" class="bg-darkblue text-white pt-8 pb-2 w-full">
     <div class="container px-4">
       <!-- Main footer sections -->
       <div class="grid grid-cols-1 md:grid-cols-4 gap-8">

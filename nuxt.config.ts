@@ -1,11 +1,14 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
+
   modules: [
     "@nuxtjs/tailwindcss",
     "@nuxt/image",
-    '@nuxtjs/i18n'
+    '@nuxtjs/i18n',
+    '@nuxt/content'
   ],
+
   app: {
     head: {
       link: [
@@ -20,6 +23,7 @@ export default defineNuxtConfig({
       ],
     },
   },
+
   i18n: {
     restructureDir: "",
     locales: [
@@ -36,5 +40,7 @@ export default defineNuxtConfig({
     ],
     defaultLocale: 'en',
     strategy: 'prefix'
-  }
+  },
+
+  compatibilityDate: '2025-04-01'
 })

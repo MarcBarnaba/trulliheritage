@@ -3,7 +3,7 @@
     <button @click="toggleDropdown" class="flex items-center gap-2 focus:outline-none" aria-haspopup="true"
       :aria-expanded="isOpen">
 
-      <span class="material-icons text-gray-600 h-5 w-5">language</span>
+      <span :class="`material-icons text-${textWhite ? 'white' : 'black'}-600 h-5 w-5`">language</span>
 
 
       <span>{{ currentLocaleLabel }}</span>
@@ -56,6 +56,12 @@
 <script setup lang="ts">
 import { ref, computed, onMounted, onUnmounted } from 'vue';
 import { useI18n, type Locale } from 'vue-i18n';
+
+withDefaults(defineProps<{
+  textWhite?: boolean;
+}>(), ({
+  textWhite: true
+}));
 
 const { locale } = useI18n();
 const switchLocalePath = useSwitchLocalePath();

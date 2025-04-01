@@ -74,7 +74,7 @@ SUMMARY:CLOSED - Not available
 END:VEVENT
 END:VCALENDAR
 `
-    
+
     // Analizza il contenuto iCal
     const jcalData = ICAL.parse(icalData);
     const component = new ICAL.Component(jcalData);
@@ -85,7 +85,7 @@ END:VCALENDAR
       const summary = event.getFirstPropertyValue('summary')?.toString() || 'Senza titolo';
       const startDate = ICAL.Time.fromDateString(event.getFirstPropertyValue('dtstart')!.toString()).toJSDate();
       const endDate = ICAL.Time.fromDateString(event.getFirstPropertyValue('dtend')!.toString()).toJSDate();
-      
+
       return { summary, startDate, endDate };
     });
 
@@ -96,6 +96,6 @@ END:VCALENDAR
 };
 
 // Esegui il parsing e stampa il risultato
-parseICal(ICAL_URL).then(events => {
-  console.log('📅 Eventi trovati:', events);
-});
+// parseICal(ICAL_URL).then(events => {
+//   console.log('📅 Eventi trovati:', events);
+// });

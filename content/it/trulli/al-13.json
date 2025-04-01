@@ -1,0 +1,49 @@
+{
+  "slug": "al-13",
+  "name": "Trullo Romantico con Piscina",
+  "rating": 4.9,
+  "reviewsCount": 128,
+  "maxGuests": 2,
+  "location": "Alberobello, Puglia",
+  "shortDescription": "Questo autentico trullo pugliese è stato completamente ristrutturato per offrirti un soggiorno indimenticabile nel cuore della Valle d'Itria.",
+  "description": "Questo autentico trullo pugliese è stato completamente ristrutturato per offrirti un soggiorno indimenticabile nel cuore della Valle d'Itria.Immerso tra ulivi secolari, offre privacy assoluta e un ambiente rilassante, perfetto per una fuga romantica o una vacanza familiare.Il trullo dispone di due camere da letto arredate con gusto, un bagno moderno, una cucina completamente attrezzata e un ampio soggiorno con camino. All'esterno, potrai goderti la piscina privata, una zona pranzo all'aperto e un barbecue.",
+  "coverImage": "/13/PHOTO-2024-05-07-13-40-52.jpg",
+  "images": [
+    "/13/577082261.jpg",
+    "/13/577082264.jpg",
+    "/13/PHOTO-2024-05-07-13-40-52 8.jpg",
+    "/13/PHOTO-2024-05-07-13-40-52.jpg"
+  ],
+  "nightInfo": [
+    { "icon": "people_alt", "text": "4 ospiti" },
+    { "icon": "hotel", "text": "2 camere da letto" },
+    { "icon": "bathtub", "text": "1 bagno" }
+  ],
+  "services": [
+    { "icon": "wifi", "text": "Wi-Fi gratuito" },
+    { "icon": "ac_unit", "text": "Aria condizionata" },
+    { "icon": "local_parking", "text": "Parcheggio gratuito" }
+  ],
+  "amenities": [
+    { "icon": "pool", "text": "Piscina privata" },
+    { "icon": "fireplace", "text": "Camino" },
+    { "icon": "outdoor_grill", "text": "Barbecue" }
+  ],
+  "rules": [
+    { "allowed": true, "text": "Check-in dalle 15:00 alle 20:00" },
+    { "allowed": true, "text": "Check-out entro le 10:00" },
+    { "allowed": false, "text": "Non è permesso fumare" },
+    { "allowed": false, "text": "Gli animali non sono ammessi" }
+  ],
+  "usefulInfo": [
+    { "text": "A 10 minuti di auto dal centro di Alberobello" },
+    { "text": "Possibilità di organizzare tour della regione" },
+    { "text": "Kit di benvenuto con prodotti locali" }
+  ],
+  "owner": {
+    "name": "Marco Rossi",
+    "since": "2018",
+    "phone": "+393331234567",
+    "description": "Ciao, sono Marco! Amo la Puglia e sarò felice di darti consigli sui posti da visitare e le specialità da assaggiare durante il tuo soggiorno."
+  }
+}

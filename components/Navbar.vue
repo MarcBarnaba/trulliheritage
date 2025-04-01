@@ -14,19 +14,19 @@
         <div class="hidden md:block">
           <ul class="flex items-center gap-x-8">
             <li>
-              <a href="#gallery"
+              <NuxtLink to="/trulli"
                 class="font-medium py-2 px-1 hover:text-teal-600 transition-colors relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-teal-600 after:transition-all">
                 {{ t('menu.trulli') }}
-              </a>
+              </NuxtLink>
             </li>
             <li>
-              <a href="#map"
+              <a href="#footer"
                 class="font-medium py-2 px-1 hover:text-teal-600 transition-colors relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-teal-600 after:transition-all">
                 {{ t('menu.about') }}
               </a>
             </li>
             <li>
-              <a href="#faq"
+              <a href="#footer"
                 class="font-medium py-2 px-1 hover:text-teal-600 transition-colors relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-teal-600 after:transition-all">
                 {{ t('menu.contact') }}
               </a>
@@ -55,26 +55,28 @@
       <div v-if="isMenuOpen" class="text-gray-800 md:hidden mt-2 py-2 bg-white rounded-md transition-all">
         <ul>
           <li>
-            <a href="#gallery"
+            <NuxtLink to="/trulli"
               class="block px-4 py-3 text-gray-800 hover:bg-gray-100 hover:text-teal-600 transition-colors"
               @click="isMenuOpen = false">
               {{ t('menu.trulli') }}
-            </a>
+            </NuxtLink>
           </li>
           <li>
-            <a href="#map" class="block px-4 py-3 text-gray-800 hover:bg-gray-100 hover:text-teal-600 transition-colors"
+            <a href="#footer"
+              class="block px-4 py-3 text-gray-800 hover:bg-gray-100 hover:text-teal-600 transition-colors"
               @click="isMenuOpen = false">
               {{ t('menu.about') }}
             </a>
           </li>
           <li>
-            <a href="#faq" class="block px-4 py-3 text-gray-800 hover:bg-gray-100 hover:text-teal-600 transition-colors"
+            <a href="#footer"
+              class="block px-4 py-3 text-gray-800 hover:bg-gray-100 hover:text-teal-600 transition-colors"
               @click="isMenuOpen = false">
               {{ t('menu.contact') }}
             </a>
           </li>
           <li class="px-4 py-3">
-            <LanguageSelector />
+            <LanguageSelector :textWhite="scrolled" />
           </li>
         </ul>
       </div>
