@@ -1,15 +1,5 @@
 <template>
 	<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" :width="width" :height="height">
-		<svg:style>
-			.s0 { fill: #ffffff;stroke: #000000;stroke-miterlimit:10;stroke-width: 15;stroke-dasharray: }
-			.s1 { fill: #92ad94;stroke: #000000;stroke-linecap: round;stroke-linejoin: round;stroke-width:
-			25;stroke-dasharray: }
-			.s2 { fill: #ffffff;stroke: #000000;stroke-linejoin: round;stroke-width: 15;stroke-dasharray: }
-			.s3 { fill: #929982;stroke: #000000;stroke-linecap: round;stroke-linejoin: round;stroke-width:
-			25;stroke-dasharray: }
-			.s4 { fill: #000000;stroke: #000000;stroke-linecap: round;stroke-linejoin: round;stroke-width:
-			8;stroke-dasharray: }
-		</svg:style>
 		<g>
 			<g id="Frame 1">
 				<path class="s0"
@@ -59,3 +49,43 @@ const props = withDefaults(
 	}
 );
 </script>
+
+<style scoped>
+.s0 {
+	fill: #ffffff;
+	stroke: #000000;
+	stroke-miterlimit: 10;
+	stroke-width: 15;
+}
+
+.s1 {
+	fill: #92ad94;
+	stroke: #000000;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+	stroke-width: 25;
+}
+
+.s2 {
+	fill: #ffffff;
+	stroke: #000000;
+	stroke-linejoin: round;
+	stroke-width: 15;
+}
+
+.s3 {
+	fill: #929982;
+	stroke: #000000;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+	stroke-width: 25;
+}
+
+.s4 {
+	fill: #000000;
+	stroke: #000000;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+	stroke-width: 8;
+}
+</style>
