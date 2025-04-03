@@ -49,7 +49,7 @@ const highlightRows: HighlightProps = {
       paragraph: 'Alberobello, capitale dei trulli, è molto più di un luogo: è un viaggio nel tempo, dove ogni vicolo racconta storie antiche e ogni angolo rivela un segreto.'
     }" img-path="/13/ricardo-gomez-angel-jv3kvNBxz5s-unsplash.jpg" />
 
-    <Cards v-if="trulli" :structures="trulli" />
+    <Cards v-if="trulli" :structures="trulli" :show-more="true" showMorePath="/trulli" />
 
     <!-- <TemplatesHighlight v-bind="highlightRows" /> -->
 

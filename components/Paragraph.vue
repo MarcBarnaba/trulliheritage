@@ -3,7 +3,15 @@
     <div class="relative w-full">
       <slot></slot>
       <div :class="slotsClass">
-        <div v-if="title" :class="titleClass">{{ title }}</div>
+        <div class="flex justify-between items-center">
+          <div v-if="title" :class="titleClass">{{ title }}</div>
+          <NuxtLink v-if="showMoreBtn" :to="showMorePath">
+            <div class="rounded-full border">
+              <span class="material-icons text-white bg-gold rounded-full p-2 hover:cursor-pointer">arrow_right_alt
+              </span>
+            </div>
+          </NuxtLink>
+        </div>
         <p class="text-base text-gray-700">{{ paragraph }}</p>
         <slot name="btn"></slot>
       </div>
@@ -30,14 +38,18 @@ export interface ParagraphProps {
   | "8xl"
   | "9xl";
   paragraph?: string;
+  showMoreBtn?: boolean;
+  showMorePath?: string;
 }
 
 const props = withDefaults(defineProps<ParagraphProps>(), {
   align: "center",
   titleSize: "base",
+  showMoreBtn: false,
+  showMorePath: '/'
 });
 
-const titleClass = computed(() => `text-${props.titleSize} font-bold mb-4`);
+const titleClass = computed(() => `text-${props.titleSize} font-bold ${props.showMoreBtn ? '' : 'mb-4'} `);
 
 const alignmentClass = computed(
   () => `text-${props.align} p-8 `

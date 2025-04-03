@@ -24,6 +24,8 @@
 import VueDatePicker from '@vuepic/vue-datepicker';
 import '@vuepic/vue-datepicker/dist/main.css';
 
+const router = useRouter();
+const localePath = useLocalePath()
 const dateRange = ref(null);
 const adults = ref(1);
 const currentDate = new Date();
@@ -37,9 +39,14 @@ const handleAdultsChange = (action) => {
 };
 
 const handleCTA = () => {
-  console.log('Data range:', dateRange.value);
-  console.log('Adulti:', adults.value);
-  // Altre azioni da eseguire...
+  const query = {};
+  if (dateRange.value && dateRange.value.length === 2) {
+    query.checkin = dateRange.value[0];
+    query.checkout = dateRange.value[1];
+  }
+  query.adults = adults.value;
+
+  router.push({ path: localePath('/trulli'), query });
 };
 
 </script>

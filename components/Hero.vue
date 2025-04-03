@@ -4,9 +4,15 @@
     slim ? 'h-96' : 'h-screen'
   ]">
     <NuxtImg src="hero2.jpg" class="object-cover w-full h-full" />
-    <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center text-center pt-16 overflow-hidden">
-      <h1 class="text-white italic text-5xl font-bold p-4 mt-32">{{ title }}</h1>
-      <h1 class="text-white italic text-3xl p-4 pb-8">{{ tagline }}</h1>
+    <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center text-center overflow-hidden " :class="[
+      slim ? 'pt-8' : 'pt-16'
+    ]">
+      <h1 class="text-white italic font-bold p-4 mt-32 " :class="[
+        slim ? 'text-3xl' : 'text-5xl'
+      ]">{{ title }}</h1>
+      <h1 class="text-white italic p-4 pb-8" :class="[
+        slim ? 'text-xl' : 'text-5xl'
+      ]">{{ tagline }}</h1>
       <TravelBar v-if="showTravelBar" class="hidden md:flex" />
       <slot name="btn"></slot>
     </div>

@@ -14,7 +14,7 @@
         <div class="hidden md:block">
           <ul class="flex items-center gap-x-8">
             <li>
-              <NuxtLink to="/trulli"
+              <NuxtLink :to="localePath('/trulli')"
                 class="font-medium py-2 px-1 hover:text-teal-600 transition-colors relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-teal-600 after:transition-all">
                 {{ t('menu.trulli') }}
               </NuxtLink>
@@ -25,14 +25,8 @@
                 {{ t('menu.about') }}
               </a>
             </li>
-            <li>
-              <a href="#footer"
-                class="font-medium py-2 px-1 hover:text-teal-600 transition-colors relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-teal-600 after:transition-all">
-                {{ t('menu.contact') }}
-              </a>
-            </li>
             <li class="ml-4">
-              <LanguageSelector />
+              <LanguageSelector class="transition-colors" />
             </li>
           </ul>
         </div>
@@ -68,13 +62,6 @@
               {{ t('menu.about') }}
             </a>
           </li>
-          <li>
-            <a href="#footer"
-              class="block px-4 py-3 text-gray-800 hover:bg-gray-100 hover:text-teal-600 transition-colors"
-              @click="isMenuOpen = false">
-              {{ t('menu.contact') }}
-            </a>
-          </li>
           <li class="px-4 py-3">
             <LanguageSelector :textWhite="scrolled" />
           </li>
@@ -89,6 +76,8 @@
 const { t, locale } = useI18n();
 const isMenuOpen = ref(false);
 const scrolled = ref(false);
+
+const localePath = useLocalePath()
 
 const toggleMenu = () => {
   isMenuOpen.value = !isMenuOpen.value;

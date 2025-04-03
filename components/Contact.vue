@@ -1,58 +1,58 @@
 <template>
-  <div class="flex flex-col lg:flex-row items-center justify-center w-full">
-    <!-- <NuxtImg :src="'/contact.png'" class="px-0 py-8 lg:px-32 lg:py-8 max-w-1/2" /> -->
+  <div class="flex flex-col lg:flex-row items-center justify-center w-full py-8">
+    <div class="flex flex-col items-center justify-center h-full w-full lg:w-1/2">
+      <Paragraph :title="'Vuoi saperne di più?'" :title-size="'3xl'"></Paragraph>
+      <NuxtImg :src="'/contact.png'" class="pb-8 w-1/2 flex-grow" />
+    </div>
     <div class="w-full lg:w-1/2 px-4 lg:px-12">
-      <div class="my-12">
-        <Paragraph :title="'Contattaci'" :title-size="'3xl'">
-        </Paragraph>
+      <!-- <Paragraph :title="'Contattaci'" :title-size="'3xl'" /> -->
 
-        <IconsGold />
-        <form @submit.prevent="submitForm" class="max-w-lg mx-auto">
-          <!-- Honeypot field - hidden from users but visible to bots -->
-          <div class="hidden">
-            <label for="website">Website</label>
-            <input type="text" id="website" name="website" v-model="formData.honeypot">
-          </div>
+      <IconsGold />
+      <form @submit.prevent="submitForm" class="max-w-lg mx-auto">
+        <!-- Honeypot -->
+        <div class="hidden">
+          <label for="website">Website</label>
+          <input type="text" id="website" name="website" v-model="formData.honeypot">
+        </div>
 
-          <!-- Nome -->
-          <div class="mb-6">
-            <label for="name" class="block text-gray-700 font-medium mb-2">Nome</label>
-            <input type="text" id="name" v-model="formData.name"
-              class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500"
-              required>
-            <p v-if="errors.name" class="mt-1 text-red-500 text-sm">{{ errors.name }}</p>
-          </div>
+        <!-- Nome -->
+        <div class="mb-6">
+          <label for="name" class="block text-gray-700 font-medium mb-2">Nome</label>
+          <input type="text" id="name" v-model="formData.name"
+            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500"
+            required>
+          <p v-if="errors.name" class="mt-1 text-red-500 text-sm">{{ errors.name }}</p>
+        </div>
 
-          <!-- Email -->
-          <div class="mb-6">
-            <label for="email" class="block text-gray-700 font-medium mb-2">Email</label>
-            <input type="email" id="email" v-model="formData.email"
-              class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500"
-              required>
-            <p v-if="errors.email" class="mt-1 text-red-500 text-sm">{{ errors.email }}</p>
-          </div>
+        <!-- Email -->
+        <div class="mb-6">
+          <label for="email" class="block text-gray-700 font-medium mb-2">Email</label>
+          <input type="email" id="email" v-model="formData.email"
+            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500"
+            required>
+          <p v-if="errors.email" class="mt-1 text-red-500 text-sm">{{ errors.email }}</p>
+        </div>
 
-          <!-- Testo -->
-          <div class="mb-6">
-            <label for="message" class="block text-gray-700 font-medium mb-2">Messaggio</label>
-            <textarea id="message" v-model="formData.message" rows="5"
-              class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500"
-              required></textarea>
-            <p v-if="errors.message" class="mt-1 text-red-500 text-sm">{{ errors.message }}</p>
-          </div>
+        <!-- Testo -->
+        <div class="mb-6">
+          <label for="message" class="block text-gray-700 font-medium mb-2">Messaggio</label>
+          <textarea id="message" v-model="formData.message" rows="5"
+            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500"
+            required></textarea>
+          <p v-if="errors.message" class="mt-1 text-red-500 text-sm">{{ errors.message }}</p>
+        </div>
 
-          <!-- Submit button -->
-          <div class="text-center">
-            <button type="submit"
-              class="px-6 py-3 bg-yellow-500 text-white font-medium rounded-full hover:bg-yellow-600 transition-colors"
-              :disabled="submitting">
-              {{ submitting ? 'Invio in corso...' : 'Invia messaggio' }}
-            </button>
-            <p v-if="submitSuccess" class="mt-4 text-green-500">Messaggio inviato con successo!</p>
-            <p v-if="submitError" class="mt-4 text-red-500">Si è verificato un errore. Riprova più tardi.</p>
-          </div>
-        </form>
-      </div>
+        <!-- Submit button -->
+        <div class="text-center">
+          <button type="submit"
+            class="px-6 py-3 bg-yellow-500 text-white font-medium rounded-full hover:bg-yellow-600 transition-colors"
+            :disabled="submitting">
+            {{ submitting ? 'Invio in corso...' : 'Invia messaggio' }}
+          </button>
+          <p v-if="submitSuccess" class="mt-4 text-green-500">Messaggio inviato con successo!</p>
+          <p v-if="submitError" class="mt-4 text-red-500">Si è verificato un errore. Riprova più tardi.</p>
+        </div>
+      </form>
 
 
     </div>
