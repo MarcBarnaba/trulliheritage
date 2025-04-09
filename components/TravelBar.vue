@@ -6,10 +6,10 @@
     </VueDatePicker>
     <div class="flex items-center gap-4">
       <div class="flex items-center gap-2">
-        <span class="text-gray-600 min-w-16">{{ adults }} Ospiti</span>
         <button class="p-2 text-gray-600 rounded-full hover:bg-gray-200" @click="handleAdultsChange('decrement')">
           -
         </button>
+        <span class="text-gray-600 min-w-16">{{ adults }} Ospiti</span>
         <button class="p-2 text-gray-600 rounded-full hover:bg-gray-200" @click="handleAdultsChange('increment')">
           +
         </button>

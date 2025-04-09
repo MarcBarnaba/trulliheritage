@@ -25,15 +25,13 @@
             </div>
         </section>
 
-        <!-- Descrizione (usando il componente Paragraph) -->
         <Paragraph align="left" :title="'Descrizione'" :paragraph="trullo?.description" title-size="2xl">
             <template #default>
                 <IconsMint />
             </template>
         </Paragraph>
 
-        <!-- ImageGrid Component (Fullwidth) -->
-        <ImageGrid :images="trullo?.images ?? []" class="py-8" />
+        <ImgGrid :images="[...trullo?.images ?? [], ...trullo?.images ?? []]" class="py-8" />
 
         <div class="container mx-auto px-8 pb-8">
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -135,32 +133,18 @@
 
                         </div>
 
-
                         <!-- Testimonials Section -->
                         <section class="container mx-auto">
                             <h3 class="text-xl font-semibold mb-4">What Visitors Say</h3>
-
                             <div class="mt-6 grid md:grid-cols-3 gap-6">
-                                <div class="bg-white p-6 rounded-lg shadow-md">
-                                    <p class="text-gray-600 italic">"A magical place that feels like stepping back in
-                                        time.
-                                        Alberobello is a must-visit!"</p>
-                                    <h4 class="mt-4 font-bold">- Maria, Spain</h4>
-                                </div>
-                                <div class="bg-white p-6 rounded-lg shadow-md">
-                                    <p class="text-gray-600 italic">"I was blown away by the beauty and history of the
-                                        Trulli.
-                                        Incredible experience!"</p>
-                                    <h4 class="mt-4 font-bold">- Luca, Italy</h4>
-                                </div>
-                                <div class="bg-white p-6 rounded-lg shadow-md">
-                                    <p class="text-gray-600 italic">"A stunning and peaceful place. The history behind
-                                        Trulli is
-                                        fascinating!"</p>
-                                    <h4 class="mt-4 font-bold">- Emma, UK</h4>
+                                <div v-for="(testimonial, index) in trullo?.testimonials" :key="`testimonial-${index}`"
+                                    class="bg-white p-6 rounded-lg shadow-md">
+                                    <p class="text-gray-600 italic">"{{ testimonial.text }}"</p>
+                                    <h4 class="mt-4 font-bold">- {{ testimonial.name }}</h4>
                                 </div>
                             </div>
                         </section>
+
                     </section>
                 </div>
 
@@ -186,12 +170,26 @@
                                 <div class="p-3 border-r col-span-2">
                                     <label class="block text-xs text-gray-600 mb-1">OSPITI</label>
                                     <select class="w-full border-none p-0 focus:ring-0" v-model="guests">
-                                        <option value="1">1 ospite</option>
-                                        <option value="2">2 ospiti</option>
-                                        <option value="3">3 ospiti</option>
-                                        <option value="4">4 ospiti</option>
+                                        <option v-for="i in trullo?.maxGuests || 1" :key="i" :value="i">
+                                            {{ i }} {{ i === 1 ? 'ospite' : 'ospiti' }}
+                                        </option>
                                     </select>
                                 </div>
+                            </div>
+                        </div>
+
+                        <!-- Availability Check Result Alert -->
+                        <div v-if="availabilityResult" :class="[
+                            'p-4 mb-4 rounded-lg flex items-start',
+                            availabilityResult.available
+                                ? 'bg-green-100 text-green-800 border border-green-200'
+                                : 'bg-red-100 text-red-800 border border-red-200'
+                        ]">
+                            <span class="material-icons mr-2">
+                                {{ availabilityResult.available ? 'check_circle' : 'error' }}
+                            </span>
+                            <div>
+                                <p class="font-medium">{{ availabilityResult.message }}</p>
                             </div>
                         </div>
 
@@ -222,26 +220,31 @@ const props = defineProps<{
     trullo: TrulloType
 }>();
 
-interface AvailabilityPeriod {
-    period: string;
+interface AvailabilityResult {
     available: boolean;
+    message: string;
 }
 
 // Stato per form di contatto
 const checkIn = ref(new Date().toISOString().split('T')[0]);
 const checkOut = ref(new Date(Date.now() + 7 * 24 * 60 * 60 * 1000).toISOString().split('T')[0]);
 const guests = ref('2');
+const availabilityResult = ref<AvailabilityResult | null>(null);
 
 
 
-// Funzione per verificare la disponibilità
 const checkAvailability = () => {
-    // Qui implementeresti la logica per verificare la disponibilità tramite i dati .ics
-    console.log(`Verificando disponibilità dal ${checkIn.value} al ${checkOut.value} per ${guests.value} ospiti`);
-    alert(`Struttura disponibile per le date selezionate! Contatta l'host per procedere con la prenotazione.`);
+    // TODO: API Server Side
+    const isAvailable = Math.random() > 0.3; // 70% di probabilità che sia disponibile
+
+    availabilityResult.value = {
+        available: isAvailable,
+        message: isAvailable
+            ? `Struttura disponibile dal ${checkIn.value} al ${checkOut.value} per ${guests.value} ospiti!`
+            : `Spiacenti, struttura non disponibile per le date selezionate.`
+    };
 };
 
-// Funzione per generare il link WhatsApp
 const getWhatsAppLink = () => {
     const message = encodeURIComponent(
         `Ciao ${props.trullo.owner.name}, sono interessato al tuo "${props.trullo.name}" ` +

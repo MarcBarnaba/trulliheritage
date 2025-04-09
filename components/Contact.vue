@@ -44,10 +44,12 @@
 
         <!-- Submit button -->
         <div class="text-center">
-          <button type="submit"
-            class="px-6 py-3 bg-yellow-500 text-white font-medium rounded-full hover:bg-yellow-600 transition-colors"
-            :disabled="submitting">
-            {{ submitting ? 'Invio in corso...' : 'Invia messaggio' }}
+          <button type="submit" class="px-6 py-3 bg-gold text-white font-medium rounded-full " :disabled="submitting">
+            <div class="flex items-center gap-2">
+              {{ submitting ? 'Invio in corso...' : 'Invia messaggio' }}
+              <span class="material-icons">send</span>
+            </div>
+
           </button>
           <p v-if="submitSuccess" class="mt-4 text-green-500">Messaggio inviato con successo!</p>
           <p v-if="submitError" class="mt-4 text-red-500">Si è verificato un errore. Riprova più tardi.</p>
@@ -60,7 +62,6 @@
 </template>
 
 <script setup lang="ts">
-// Interfaccia per i dati del form
 interface FormData {
   name: string
   email: string
@@ -68,19 +69,17 @@ interface FormData {
   honeypot: string // Campo honeypot per rilevare i bot
 }
 
-// Interfaccia per gli errori del form
 interface FormErrors {
   name?: string
   email?: string
   message?: string
 }
 
-// Stati del form
 const formData = reactive<FormData>({
   name: '',
   email: '',
   message: '',
-  honeypot: '' // Se compilato, è probabilmente un bot
+  honeypot: ''
 })
 
 const errors = reactive<FormErrors>({})
@@ -91,7 +90,6 @@ const submitError = ref<boolean>(false)
 // Email destinataria (fissa)
 const RECIPIENT_EMAIL = 'info@tuodominio.it' // Sostituisci con l'email desiderata
 
-// Validazione del form
 const validateForm = (): boolean => {
   errors.name = !formData.name ? 'Il nome è obbligatorio' : undefined
 
@@ -102,15 +100,12 @@ const validateForm = (): boolean => {
 
   errors.message = !formData.message ? 'Il messaggio è obbligatorio' : undefined
 
-  // Verifica se ci sono errori
   return !errors.name && !errors.email && !errors.message
 }
 
-// Invio del form
 const submitForm = async () => {
   // Se il campo honeypot è compilato, è probabilmente un bot. Fingiamo di inviare ma non facciamo nulla.
   if (formData.honeypot) {
-    // Simuliamo un invio positivo per non far capire al bot che lo abbiamo identificato
     submitting.value = true
     await new Promise(resolve => setTimeout(resolve, 1000))
     submitting.value = false
@@ -118,7 +113,6 @@ const submitForm = async () => {
     return
   }
 
-  // Validazione form
   if (!validateForm()) {
     return
   }

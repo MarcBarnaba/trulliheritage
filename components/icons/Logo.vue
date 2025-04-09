@@ -59,7 +59,7 @@ const props = withDefaults(
 }
 
 .s1 {
-	fill: #92ad94;
+	fill: #CBA135;
 	stroke: #000000;
 	stroke-linecap: round;
 	stroke-linejoin: round;
@@ -74,7 +74,7 @@ const props = withDefaults(
 }
 
 .s3 {
-	fill: #929982;
+	fill: #89B0AE;
 	stroke: #000000;
 	stroke-linecap: round;
 	stroke-linejoin: round;

@@ -37,7 +37,14 @@ export const TrulloSchema = z.object({
         since: z.string(),
         description: z.string(),
         phone: z.string(),
-    })
+    }),
+    testimonials: z.array(z.object({
+        text: z.string(),
+        name: z.string(),
+        country: z.string().optional(),
+        rating: z.number().min(1).max(5).optional(),
+        date: z.string().optional(),
+    })).optional()
 });
 
 export type TrulloType = z.infer<typeof TrulloSchema>;

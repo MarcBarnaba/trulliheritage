@@ -12,25 +12,21 @@
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted, computed } from 'vue';
 
-// Props
-interface Props {
+interface ParallaxProps {
     src: string;
-    height?: string; // Opzionale per controllare l'altezza
-    parallaxStrength?: number; // Forza dell'effetto parallax
+    parallaxStrength?: number;
 }
 
-const props = withDefaults(defineProps<Props>(), {
+const props = withDefaults(defineProps<ParallaxProps>(), {
     height: '24rem', // default a 24rem (equivalente a h-96)
     parallaxStrength: 0.15 // valore moderato per default
 });
 
-// Refs
 const parallaxWrapper = ref<HTMLDivElement | null>(null);
 const parallaxContainer = ref<HTMLDivElement | null>(null);
 const offsetY = ref(0);
 const isVisible = ref(false);
 
-// Funzione per controllare se l'elemento è visibile nella viewport
 const checkVisibility = () => {
     if (!parallaxWrapper.value) return false;
 
@@ -60,7 +56,6 @@ const calculateParallaxOffset = () => {
     offsetY.value = -viewportPosition * props.parallaxStrength * maxOffset;
 };
 
-// Gestore dello scroll
 const handleScroll = () => {
     isVisible.value = checkVisibility();
     if (isVisible.value) {
@@ -68,18 +63,9 @@ const handleScroll = () => {
     }
 };
 
-// Stile calcolato per l'altezza
-const wrapperStyle = computed(() => ({
-    height: props.height
-}));
-
-// Aggiungi e rimuovi event listener per lo scroll
 onMounted(() => {
     window.addEventListener('scroll', handleScroll);
-    // Esegui una volta all'inizio
     handleScroll();
-
-    // Aggiungi anche un listener per il resize
     window.addEventListener('resize', handleScroll);
 });
 

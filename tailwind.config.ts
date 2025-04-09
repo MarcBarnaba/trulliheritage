@@ -12,13 +12,13 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ["Mulish", "sans-serif"], // Imposta "Mulish" come font principale
+        sans: ["Mulish", "sans-serif"],
       },
       colors: {
         blue: "#89B0AE",
         darkblue: "#0A2E36",
         gold: "#CBA135",
-        green: "#036D19",
+        greeen: "#036D19",
         mint: "#BEE3DB",
       },
     },

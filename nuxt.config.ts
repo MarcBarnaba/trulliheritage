@@ -39,7 +39,10 @@ export default defineNuxtConfig({
       }
     ],
     defaultLocale: 'en',
-    strategy: 'prefix'
+    strategy: 'prefix',
+    bundle: {
+      optimizeTranslationDirective: false,
+    },
   },
 
   compatibilityDate: '2025-04-01'

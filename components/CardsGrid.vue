@@ -69,7 +69,7 @@
                     </div>
 
                     <!-- Filtro prezzo -->
-                    <div class="pb-4">
+                    <!-- <div class="pb-4">
                         <label for="price" class="block font-medium text-gray-700 mb-1">Prezzo massimo (€/notte)</label>
                         <input type="range" id="price" v-model.number="filters.maxPrice" min="50" max="500" step="10"
                             class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"
@@ -79,7 +79,7 @@
                             <span class="text-sm font-medium">€{{ filters.maxPrice }}</span>
                             <span class="text-xs text-gray-500">€500</span>
                         </div>
-                    </div>
+                    </div> -->
 
                     <!-- Pulsanti di azione -->
                     <div class="flex gap-2">
@@ -97,35 +97,8 @@
                     <div class="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500"></div>
                 </div>
 
-                <div v-else-if="filteredStructures.length > 0"
-                    class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
-                    <div v-for="(structure, index) in filteredStructures" :key="index"
-                        class="border rounded bg-white shadow-md hover:shadow-lg transition duration-200">
-                        <div class="bg-white">
-                            <img :src="structure.coverImage" alt="Immagine del trullo"
-                                class="mb-4 w-full h-48 object-cover rounded-tl rounded-tr">
-                            <div class="bg-white flex justify-between items-center mb-2 p-4">
-                                <h3 class="text-xl font-semibold mr-2">{{ structure.name }}</h3>
-                                <div class="flex justify-center items-center">
-                                    <h2 class="mr-2">{{ structure.maxGuests }}</h2>
-                                    <IconsUser />
-                                </div>
-                            </div>
-                            <div class="bg-white mb-4 px-4 text-gray-600">{{ structure.shortDescription ??
-                                structure.description }}</div>
-                        </div>
-
-                        <div class="bg-white flex justify-between items-center p-4 border-t">
-                            <div class="flex items-center gap-3">
-                                <span v-for="(amenity, index) in structure.amenities" :key="`amenity-${index}`"
-                                    class="flex items-center">
-                                    <span class="material-icons text-gray-600 text-md">{{ amenity.icon }}</span>
-                                </span>
-                            </div>
-                            <Buttoon :url="`/trulli/${structure.slug}`" color="#FFFFFF" :textWhite="false"
-                                :text="'Scopri'" :show-icon="true" />
-                        </div>
-                    </div>
+                <div v-else-if="filteredStructures.length > 0" class="grid grid-cols-1 md:grid-cols-2  gap-6">
+                    <Card v-for="(structure, index) in filteredStructures" :key="index" :structure="structure" />
                 </div>
 
                 <div v-else class="bg-white p-8 rounded shadow text-center">
@@ -160,12 +133,10 @@ interface Filters {
 const route = useRoute();
 const router = useRouter();
 const { t, locale } = useI18n();
-const localePath = useLocalePath();
 
 const allStructures = ref<Partial<TrulloType>[]>([]);
 const isLoading = ref(true);
 
-// Filtri reattivi
 const filters = reactive<Filters>({
     checkin: '',
     checkout: '',
@@ -179,7 +150,6 @@ const filters = reactive<Filters>({
     maxPrice: 500
 });
 
-// Estrai i parametri dall'URL al caricamento
 const extractSearchParams = () => {
     if (route.query.checkin) filters.checkin = route.query.checkin as string;
     if (route.query.checkout) filters.checkout = route.query.checkout as string;
@@ -193,36 +163,34 @@ const extractSearchParams = () => {
     if (route.query.maxPrice) filters.maxPrice = Number(route.query.maxPrice);
 };
 
-// Filtra i trulli in base ai criteri
 const filteredStructures = computed(() => {
     return allStructures.value.filter(structure => {
+        // TODO: Filter
         // Filtro per numero di ospiti
-        if (filters.adults > (structure.maxGuests || 0)) return false;
+        // if (filters.adults > (structure.maxGuests || 0)) return false;
 
         // Filtro per prezzo
         // if ((structure.price || 0) > filters.maxPrice) return false;
 
 
         // Filtro per amenities
-        const structureAmenities = structure.amenities || [];
-        const amenityIcons = structureAmenities.map(a => a.icon);
+        // const structureAmenities = structure.amenities || [];
+        // const amenityIcons = structureAmenities.map(a => a.icon);
 
-        if (filters.amenities.pool && !amenityIcons.includes('pool')) return false;
-        if (filters.amenities.wifi && !amenityIcons.includes('wifi')) return false;
-        if (filters.amenities.ac && !amenityIcons.includes('ac_unit')) return false;
-        if (filters.amenities.pets && !amenityIcons.includes('pets')) return false;
+        // if (filters.amenities.pool && !amenityIcons.includes('pool')) return false;
+        // if (filters.amenities.wifi && !amenityIcons.includes('wifi')) return false;
+        // if (filters.amenities.ac && !amenityIcons.includes('ac_unit')) return false;
+        // if (filters.amenities.pets && !amenityIcons.includes('pets')) return false;
 
         return true;
     });
 });
 
-// Incrementa il numero di ospiti
 const incrementGuests = () => {
     filters.adults++;
     applyFilters();
 };
 
-// Decrementa il numero di ospiti
 const decrementGuests = () => {
     if (filters.adults > 1) {
         filters.adults--;
@@ -230,7 +198,6 @@ const decrementGuests = () => {
     }
 };
 
-// Resetta tutti i filtri
 const resetFilters = () => {
     filters.checkin = '';
     filters.checkout = '';
@@ -263,15 +230,14 @@ const applyFilters = () => {
     // Aggiorna l'URL senza ricaricare la pagina
     router.replace({ query });
 
-    // Ricarica i dati
     fetchTrulli();
 };
 
-// Carica i trulli dal backend
 const fetchTrulli = async () => {
     isLoading.value = true;
     try {
         const { data: trulli } = await useAsyncData(route.path, () => {
+            //TODO: Update collection name 
             return queryCollection(locale.value).all();
         })
         allStructures.value = trulli.value || [];
@@ -284,13 +250,11 @@ const fetchTrulli = async () => {
     }
 };
 
-// All'inizializzazione, estrai i parametri e carica i trulli
 onMounted(() => {
     extractSearchParams();
     fetchTrulli();
 });
 
-// Osserva cambiamenti nei parametri dell'URL per aggiornare i filtri
 watch(() => route.query, () => {
     extractSearchParams();
     fetchTrulli();

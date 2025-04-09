@@ -15,7 +15,6 @@
     "/13/PHOTO-2024-05-07-13-40-52.jpg"
   ],
   "nightInfo": [
-    { "icon": "people_alt", "text": "4 ospiti" },
     { "icon": "hotel", "text": "2 camere da letto" },
     { "icon": "bathtub", "text": "1 bagno" }
   ],
@@ -45,5 +44,19 @@
     "since": "2018",
     "phone": "+393331234567",
     "description": "Ciao, sono Marco! Amo la Puglia e sarò felice di darti consigli sui posti da visitare e le specialità da assaggiare durante il tuo soggiorno."
-  }
+  },
+  "testimonials": [
+    {
+      "text": "A magical place that feels like stepping back in time. Alberobello is a must-visit!",
+      "name": "Maria, Spain"
+    },
+    {
+      "text": "A magical place that feels like stepping back in time. Alberobello is a must-visit!",
+      "name": "Maria, Spain"
+    },
+    {
+      "text": "A magical place that feels like stepping back in time. Alberobello is a must-visit!",
+      "name": "Maria, Spain"
+    }
+  ]
 }

@@ -1,14 +1,19 @@
 <template>
   <nav class="fixed top-0 left-0 z-10 w-full transition-all duration-200" :class="[
     scrolled ? 'bg-white text-gray-800 shadow-md py-2' : 'bg-transparent text-white py-2',
-    isMenuOpen ? 'bg-white text-gray-800' : ''
+    isMenuOpen ? 'bg-white text-gray-800' : '',
   ]">
     <div>
       <div class="flex justify-between items-center px-8">
-        <NuxtLink to="/" class="shrink-0">
-          <IconsLogo :height="80" :width="80" />
-          <!-- <IconsLogoBW :height="80" :width="80" /> -->
+        <NuxtLink :to="localePath('/')" class="shrink-0">
+          <div class="flex justify-center items-center">
+            <IconsLogo :height="80" :width="80" />
+            <!-- <IconsLogoBW :height="80" :width="80" /> -->
+            <h1 class="font-light text-3xl" :class="isMenuOpen && !scrolled ? 'text-gray-800' : ''
+              ">Trulli Heritage</h1>
+          </div>
         </NuxtLink>
+
 
         <!-- Desktop Menu -->
         <div class="hidden md:block">
@@ -25,7 +30,7 @@
                 {{ t('menu.about') }}
               </a>
             </li>
-            <li class="ml-4">
+            <li>
               <LanguageSelector class="transition-colors" />
             </li>
           </ul>
@@ -46,7 +51,7 @@
       </div>
 
       <!-- Mobile Menu -->
-      <div v-if="isMenuOpen" class="text-gray-800 md:hidden mt-2 py-2 bg-white rounded-md transition-all">
+      <div v-if="isMenuOpen" class="text-gray-800 md:hidden mt-2 py-2 rounded-md transition-all ">
         <ul>
           <li>
             <NuxtLink to="/trulli"

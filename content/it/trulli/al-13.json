@@ -15,20 +15,11 @@
     "/13/PHOTO-2024-05-07-13-40-52.jpg"
   ],
   "nightInfo": [
-    { "icon": "people_alt", "text": "4 ospiti" },
     { "icon": "hotel", "text": "2 camere da letto" },
     { "icon": "bathtub", "text": "1 bagno" }
   ],
-  "services": [
-    { "icon": "wifi", "text": "Wi-Fi gratuito" },
-    { "icon": "ac_unit", "text": "Aria condizionata" },
-    { "icon": "local_parking", "text": "Parcheggio gratuito" }
-  ],
-  "amenities": [
-    { "icon": "pool", "text": "Piscina privata" },
-    { "icon": "fireplace", "text": "Camino" },
-    { "icon": "outdoor_grill", "text": "Barbecue" }
-  ],
+  "services": [{ "icon": "wifi", "text": "Wi-Fi gratuito" }],
+  "amenities": [{ "icon": "pool", "text": "Piscina privata" }],
   "rules": [
     { "allowed": true, "text": "Check-in dalle 15:00 alle 20:00" },
     { "allowed": true, "text": "Check-out entro le 10:00" },
@@ -45,5 +36,19 @@
     "since": "2018",
     "phone": "+393331234567",
     "description": "Ciao, sono Marco! Amo la Puglia e sarò felice di darti consigli sui posti da visitare e le specialità da assaggiare durante il tuo soggiorno."
-  }
+  },
+  "testimonials": [
+    {
+      "text": "A magical place that feels like stepping back in time. Alberobello is a must-visit!",
+      "name": "Maria, Spain"
+    },
+    {
+      "text": "A magical place that feels like stepping back in time. Alberobello is a must-visit!",
+      "name": "Maria, Spain"
+    },
+    {
+      "text": "A magical place that feels like stepping back in time. Alberobello is a must-visit!",
+      "name": "Maria, Spain"
+    }
+  ]
 }
