@@ -20,13 +20,13 @@
           <ul class="flex items-center gap-x-8">
             <li>
               <NuxtLink :to="localePath('/trulli')"
-                class="font-medium py-2 px-1 hover:text-teal-600 transition-colors relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-teal-600 after:transition-all">
+                class="font-medium py-2 px-1 hover:text-gold transition-colors relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-gold after:transition-all">
                 {{ t('menu.trulli') }}
               </NuxtLink>
             </li>
             <li>
               <a href="#footer"
-                class="font-medium py-2 px-1 hover:text-teal-600 transition-colors relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-teal-600 after:transition-all">
+                class="font-medium py-2 px-1 hover:text-gold transition-colors relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-gold after:transition-all">
                 {{ t('menu.about') }}
               </a>
             </li>
@@ -55,14 +55,13 @@
         <ul>
           <li>
             <NuxtLink to="/trulli"
-              class="block px-4 py-3 text-gray-800 hover:bg-gray-100 hover:text-teal-600 transition-colors"
+              class="block px-4 py-3 text-gray-800 hover:bg-gray-100 hover:text-gold transition-colors"
               @click="isMenuOpen = false">
               {{ t('menu.trulli') }}
             </NuxtLink>
           </li>
           <li>
-            <a href="#footer"
-              class="block px-4 py-3 text-gray-800 hover:bg-gray-100 hover:text-teal-600 transition-colors"
+            <a href="#footer" class="block px-4 py-3 text-gray-800 hover:bg-gray-100 hover:text-gold transition-colors"
               @click="isMenuOpen = false">
               {{ t('menu.about') }}
             </a>

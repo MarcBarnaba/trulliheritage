@@ -2,8 +2,8 @@
   <div class="relative">
     <button @click="toggleDropdown" class="flex items-center gap-2 focus:outline-none w-24" aria-haspopup="true"
       :aria-expanded="isOpen">
-      <span :class="`material-icons text-${textWhite ? 'white' : 'black'}-600 h-5 w-5`">language</span>
       <span>{{ currentLocaleLabel }}</span>
+      <span :class="`material-icons text-${textWhite ? 'white' : 'black'}-600 h-5 w-5`">language</span>
       <!-- <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 transition-transform duration-200"
         :class="{ 'rotate-180': isOpen }" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
