@@ -1,5 +1,6 @@
 import { defineEventHandler, readBody } from 'h3'
 import ICAL from 'ical.js'
+import { getIcalUrlBySlug } from '../config/ical'
 
 export interface CheckAvailabilityRequest {
     checkIn: string
@@ -62,14 +63,6 @@ const validateRequest = (body: any): ValidationResult => {
     }
 
     return { isValid: true }
-}
-
-// Funzione per ottenere l'URL iCal in base allo slug del trullo
-const getIcalUrlBySlug = (slug: string): string => {
-    // TODO: Implementare la logica per recuperare l'URL del calendario dal database
-    // In base allo slug del trullo
-    console.info(`Recupero URL iCal per il trullo: ${slug}`)
-    return `https://ical.booking.com/v1/export?t=xxx&property=${slug}`
 }
 
 // Funzione per verificare se un intervallo si sovrappone con un evento del calendario
@@ -189,6 +182,7 @@ export default defineEventHandler(async (event) => {
         const checkOutDate = new Date(body.checkOut)
 
         // Ottiene l'URL del calendario in base allo slug del trullo
+        console.info(`Recupero URL iCal per il trullo: ${body.trullo.slug}`)
         const icalUrl = getIcalUrlBySlug(body.trullo.slug)
 
         // Recupera gli eventi dal calendario
