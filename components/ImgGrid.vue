@@ -1,6 +1,6 @@
 <template>
     <div class="w-full relative mb-4">
-        <Paragraph title="Gallery" titleSize="2xl" />
+        <Paragraph :title="t('gallery')" titleSize="2xl" />
 
         <!-- Image Grid Container -->
         <div ref="gridContainer" :class="[
@@ -12,7 +12,7 @@
                 <div v-for="(image, index) in displayedImages.filter((_, i) => i % 4 === 0 || i % 4 === 1)"
                     :key="'col1-' + index" :class="index % 2 === 0 ? 'aspect-w-16' : 'aspect-w-9'"
                     class="overflow-hidden w-full">
-                    <NuxtImg :src="image" alt="Image" class="object-cover w-full h-full pb-2" />
+                    <NuxtImg :src="image" :alt="`Trullo Img #${index}`" class="object-cover w-full h-full pb-2" />
                 </div>
             </div>
 
@@ -21,7 +21,7 @@
                 <div v-for="(image, index) in displayedImages.filter((_, i) => i % 4 === 2 || i % 4 === 3)"
                     :key="'col2-' + index" :class="index % 2 !== 0 ? 'aspect-w-16' : 'aspect-w-9'"
                     class="overflow-hidden w-full">
-                    <NuxtImg :src="image" alt="Image" class="object-cover w-full h-full pb-2" />
+                    <NuxtImg :src="image" :alt="`Trullo Img #${index}`" class="object-cover w-full h-full pb-2" />
                 </div>
             </div>
         </div>
@@ -48,6 +48,7 @@ const props = defineProps<{
     showMorePath?: string,
 }>();
 
+const { t } = useI18n()
 const expanded = ref(false);
 const gridContainer = ref(null);
 

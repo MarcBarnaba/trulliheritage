@@ -1,4 +1,22 @@
 {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "notebook.defaultFormatter": "esbenp.prettier-vscode"
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "notebook.defaultFormatter": "esbenp.prettier-vscode",
+  "i18n-ally.localesPaths": ["locales"],
+  "i18n-ally.keystyle": "flat",
+  "i18n-ally.extract.ignoredByFiles": {
+    "components/Paragraph.vue": [
+      "flex-col justify-center items-${props.align} "
+    ],
+    "components/ImgGrid.vue": ["`Trullo Img #${index}`"],
+    "components/templates/Trullo.vue": ["\"{{ testimonial.text }}\""]
+  },
+  "i18n-ally.extract.ignored": [
+    "text-${props.align} p-8 ",
+    "`Trullo Img #${index}`",
+    "Trullo Cover Image",
+    "text-${props.titleSize} font-bold ${props.showMoreBtn ? '' : 'mb-4'} ",
+    "=",
+    "- {{ testimonial.name }}",
+    "Trullo"
+  ]
 }

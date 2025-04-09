@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-col lg:flex-row items-center justify-center w-full py-8">
     <div class="flex flex-col items-center justify-center h-full w-full lg:w-1/2">
-      <Paragraph :title="'Vuoi saperne di più?'" :title-size="'3xl'"></Paragraph>
+      <Paragraph :title="t('knowMore')" :title-size="'3xl'"></Paragraph>
       <NuxtImg :src="'/contact.png'" class="pb-8 w-1/2 flex-grow" />
     </div>
     <div class="w-full lg:w-1/2 px-4 lg:px-12">
@@ -11,13 +11,12 @@
       <form @submit.prevent="submitForm" class="max-w-lg mx-auto">
         <!-- Honeypot -->
         <div class="hidden">
-          <label for="website">Website</label>
           <input type="text" id="website" name="website" v-model="formData.honeypot">
         </div>
 
         <!-- Nome -->
         <div class="mb-6">
-          <label for="name" class="block text-gray-700 font-medium mb-2">Nome</label>
+          <label for="name" class="block text-gray-700 font-medium mb-2">{{ t('form.name.label') }}</label>
           <input type="text" id="name" v-model="formData.name"
             class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500"
             required>
@@ -26,7 +25,7 @@
 
         <!-- Email -->
         <div class="mb-6">
-          <label for="email" class="block text-gray-700 font-medium mb-2">Email</label>
+          <label for="email" class="block text-gray-700 font-medium mb-2">{{ t('form.email.label') }}</label>
           <input type="email" id="email" v-model="formData.email"
             class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500"
             required>
@@ -35,7 +34,7 @@
 
         <!-- Testo -->
         <div class="mb-6">
-          <label for="message" class="block text-gray-700 font-medium mb-2">Messaggio</label>
+          <label for="message" class="block text-gray-700 font-medium mb-2">{{ t('form.message.label') }}</label>
           <textarea id="message" v-model="formData.message" rows="5"
             class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500"
             required></textarea>
@@ -46,13 +45,13 @@
         <div class="text-center">
           <button type="submit" class="px-6 py-3 bg-gold text-white font-medium rounded-full " :disabled="submitting">
             <div class="flex items-center gap-2">
-              {{ submitting ? 'Invio in corso...' : 'Invia messaggio' }}
+              {{ submitting ? t('form.button.sending') : t('form.button.send') }}
               <span class="material-icons">send</span>
             </div>
 
           </button>
-          <p v-if="submitSuccess" class="mt-4 text-green-500">Messaggio inviato con successo!</p>
-          <p v-if="submitError" class="mt-4 text-red-500">Si è verificato un errore. Riprova più tardi.</p>
+          <p v-if="submitSuccess" class="mt-4 text-green-500">{{ t('form.messageSuccess') }}</p>
+          <p v-if="submitError" class="mt-4 text-red-500">{{ t('form.messageError') }}</p>
         </div>
       </form>
 
@@ -86,19 +85,20 @@ const errors = reactive<FormErrors>({})
 const submitting = ref<boolean>(false)
 const submitSuccess = ref<boolean>(false)
 const submitError = ref<boolean>(false)
+const { t } = useI18n()
 
-// Email destinataria (fissa)
-const RECIPIENT_EMAIL = 'info@tuodominio.it' // Sostituisci con l'email desiderata
+// TODO
+const RECIPIENT_EMAIL = 'info@tuodominio.it'
 
 const validateForm = (): boolean => {
-  errors.name = !formData.name ? 'Il nome è obbligatorio' : undefined
+  errors.name = !formData.name ? t('form.name.validation') : undefined
 
-  errors.email = !formData.email ? 'L\'email è obbligatoria' : undefined
+  errors.email = !formData.email ? t('form.email.validation') : undefined
   if (formData.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-    errors.email = 'Inserisci un indirizzo email valido'
+    errors.email = t('form.email.helpText')
   }
 
-  errors.message = !formData.message ? 'Il messaggio è obbligatorio' : undefined
+  errors.message = !formData.message ? t('form.message.validation') : undefined
 
   return !errors.name && !errors.email && !errors.message
 }

@@ -10,7 +10,7 @@
             <IconsLogo :height="80" :width="80" />
             <!-- <IconsLogoBW :height="80" :width="80" /> -->
             <h1 class="font-light text-3xl" :class="isMenuOpen && !scrolled ? 'text-gray-800' : ''
-              ">Trulli Heritage</h1>
+              ">{{ t('trulliHeritage') }}</h1>
           </div>
         </NuxtLink>
 

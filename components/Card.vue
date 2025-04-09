@@ -2,7 +2,7 @@
     <div class="min-w-96 border rounded bg-white shadow-md hover:shadow-lg transition duration-200">
         <NuxtLink :to="localePath(`/trulli/${structure.slug}`)">
             <div class="bg-white">
-                <img :src="structure.coverImage" alt="Immagine del trullo"
+                <img :src="structure.coverImage" alt="Trullo Cover Image"
                     class="mb-4 w-full h-48 object-cover rounded-tl rounded-tr">
                 <div class="bg-white flex justify-between items-center mb-2 p-4">
                     <h3 class="text-xl font-semibold mr-2">{{ structure.name }}</h3>

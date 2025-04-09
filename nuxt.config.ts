@@ -1,3 +1,5 @@
+import { locales } from "./config/locales";
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
@@ -26,18 +28,7 @@ export default defineNuxtConfig({
 
   i18n: {
     restructureDir: "",
-    locales: [
-      {
-        code: 'it',
-        file: 'it.json',
-        name: 'Italiano'
-      },
-      {
-        code: 'en',
-        file: 'en.json',
-        name: 'English'
-      }
-    ],
+    locales,
     defaultLocale: 'en',
     strategy: 'prefix',
     bundle: {
