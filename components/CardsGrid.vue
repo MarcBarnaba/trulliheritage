@@ -70,7 +70,7 @@
 
                     <!-- Filtro prezzo -->
                     <!-- <div class="pb-4">
-                        <label for="price" class="block font-medium text-gray-700 mb-1">Prezzo massimo (€/notte)</label>
+                        <label for="price" class="block font-medium text-gray-700 mb-1">{{ t('maxPrice') }} (€/{{ t('night') }})</label>
                         <input type="range" id="price" v-model.number="filters.maxPrice" min="50" max="500" step="10"
                             class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"
                             @change="applyFilters">
@@ -97,7 +97,7 @@
                     <div class="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500"></div>
                 </div>
 
-                <div v-else-if="filteredStructures.length > 0" class="grid grid-cols-1 md:grid-cols-2  gap-6">
+                <div v-else-if="filteredStructures.length > 0" class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <Card v-for="(structure, index) in filteredStructures" :key="index" :structure="structure" />
                 </div>
 
@@ -130,12 +130,25 @@ interface Filters {
     maxPrice?: number;
 }
 
+// Interfaccia per la richiesta di disponibilità
+interface CheckAvailabilityRequest {
+    checkIn: string;
+    checkOut: string;
+    guests: string;
+    trullo: {
+        slug: string;
+    };
+    findAlternatives?: boolean;
+}
+
 const route = useRoute();
 const router = useRouter();
 const { t, locale } = useI18n();
 
 const allStructures = ref<Partial<TrulloType>[]>([]);
+const availableStructures = ref<Partial<TrulloType>[]>([]);
 const isLoading = ref(true);
+const isCheckingAvailability = ref(false);
 
 const filters = reactive<Filters>({
     checkin: '',
@@ -162,27 +175,117 @@ const extractSearchParams = () => {
     if (route.query.maxPrice) filters.maxPrice = Number(route.query.maxPrice);
 };
 
+// Verifica disponibilità tramite API
+const checkAvailability = async (structure: Partial<TrulloType>): Promise<boolean> => {
+    // Se non ci sono date selezionate, consideriamo disponibile
+    if (!filters.checkin || !filters.checkout) return true;
+    if (!structure.slug) return false;
+
+    try {
+        const requestData: CheckAvailabilityRequest = {
+            checkIn: filters.checkin,
+            checkOut: filters.checkout,
+            guests: filters.adults.toString(),
+            trullo: {
+                slug: structure.slug
+            }
+        };
+
+        const { data } = await useFetch('/api/checkAvailability', {
+            method: 'POST',
+            body: requestData
+        });
+
+        const response = data.value
+        return response?.body.available || false;
+    } catch (error) {
+        console.error(`Errore nel controllo disponibilità per ${structure.slug}:`, error);
+        return false;
+    }
+};
+
+// Funzione per verificare se un trullo ha una specifica amenity basandosi sull'icona
+const checkIconExists = (structure: Partial<TrulloType>, iconName: string): boolean => {
+    // Combina services e amenities per cercare tra tutti i servizi
+    const allFeatures = [
+        ...(structure.services || []),
+        ...(structure.amenities || [])
+    ];
+
+    // Controlla se l'icona esiste in uno dei servizi
+    return allFeatures.some(feature => feature.icon === iconName);
+};
+
+// Funzione per verificare se gli animali sono ammessi
+const areAnimalsAllowed = (structure: Partial<TrulloType>): boolean => {
+    if (!structure.rules || structure.rules.length === 0) return false;
+
+    // Cerca una regola che riguarda gli animali
+    const petRule = structure.rules.find(rule =>
+        rule.text.toLowerCase().includes('animal') ||
+        rule.text.toLowerCase().includes('pets')
+    );
+
+    // Se trovata, verifica se è allowed
+    return petRule ? petRule.allowed : false;
+};
+
+// Verifica tutti i filtri applicati ad un singolo trullo (esclusa la disponibilità che viene controllata separatamente)
+const applyStructureFilters = (structure: Partial<TrulloType>): boolean => {
+    // Filtro per numero di ospiti
+    if (filters.adults > (structure.maxGuests || 0)) return false;
+
+    // Filtro per prezzo massimo (se è definito un prezzo nella struttura)
+    // if (structure.price && structure.price > filters.maxPrice) return false;
+
+    // Filtro per amenities basato sulle icone
+    if (filters.amenities.pool && !checkIconExists(structure, 'pool')) return false;
+    if (filters.amenities.wifi && !checkIconExists(structure, 'wifi')) return false;
+    if (filters.amenities.ac && !checkIconExists(structure, 'ac_unit')) return false;
+
+    // Filtro per animali ammessi
+    if (filters.amenities.pets && !areAnimalsAllowed(structure)) return false;
+
+    return true;
+};
+
+// Aggiorna la lista dei trulli disponibili verificando con l'API
+const updateAvailableStructures = async () => {
+    isCheckingAvailability.value = true;
+    try {
+        // Prima applica i filtri locali
+        const filtered = allStructures.value.filter(applyStructureFilters);
+
+        // Se sono selezionate delle date, controlla la disponibilità con l'API
+        if (filters.checkin && filters.checkout) {
+            const availabilityChecks = await Promise.all(
+                filtered.map(async (structure) => {
+                    const isAvailable = await checkAvailability(structure);
+                    return { structure, isAvailable };
+                })
+            );
+
+            availableStructures.value = availabilityChecks
+                .filter(item => item.isAvailable)
+                .map(item => item.structure);
+        } else {
+            // Se non ci sono date selezionate, usa solo i filtri locali
+            availableStructures.value = filtered;
+        }
+    } catch (error) {
+        console.error('Errore durante la verifica della disponibilità:', error);
+        availableStructures.value = [];
+    } finally {
+        isCheckingAvailability.value = false;
+    }
+};
+
 const filteredStructures = computed(() => {
-    return allStructures.value.filter(structure => {
-        // TODO: Filter
-        // Filtro per numero di ospiti
-        // if (filters.adults > (structure.maxGuests || 0)) return false;
-
-        // Filtro per prezzo
-        // if ((structure.price || 0) > filters.maxPrice) return false;
-
-
-        // Filtro per amenities
-        // const structureAmenities = structure.amenities || [];
-        // const amenityIcons = structureAmenities.map(a => a.icon);
-
-        // if (filters.amenities.pool && !amenityIcons.includes('pool')) return false;
-        // if (filters.amenities.wifi && !amenityIcons.includes('wifi')) return false;
-        // if (filters.amenities.ac && !amenityIcons.includes('ac_unit')) return false;
-        // if (filters.amenities.pets && !amenityIcons.includes('pets')) return false;
-
-        return true;
-    });
+    // Se stiamo controllando la disponibilità, mostra i risultati filtrati localmente
+    if (isCheckingAvailability.value) {
+        return allStructures.value.filter(applyStructureFilters);
+    }
+    return availableStructures.value;
 });
 
 const incrementGuests = () => {
@@ -210,6 +313,9 @@ const resetFilters = () => {
 
 // Applica i filtri e aggiorna l'URL
 const applyFilters = () => {
+    // Mantiene lo stato di caricamento durante l'applicazione dei filtri
+    isLoading.value = true;
+
     const query: Record<string, string> = {};
 
     // Aggiungi solo i parametri valorizzati
@@ -229,30 +335,41 @@ const applyFilters = () => {
     // Aggiorna l'URL senza ricaricare la pagina
     router.replace({ query });
 
+    // Recupera i dati con i nuovi filtri
     fetchTrulli();
 };
 
 const fetchTrulli = async () => {
     isLoading.value = true;
+    availableStructures.value = []; // Resetta i risultati
+
     try {
-        const { data: trulli } = await useAsyncData(route.path, () => {
+        const { data: trulli } = await useAsyncData(`${route.path}-${JSON.stringify(route.query)}`, () => {
             return queryCollection(`${locale.value}_trulli`).all();
-        })
+        });
+
         allStructures.value = trulli.value || [];
 
+        // Applica i filtri e verifica la disponibilità
+        await updateAvailableStructures();
     } catch (error) {
         console.error('Errore nel caricamento dei trulli:', error);
         allStructures.value = [];
+        availableStructures.value = [];
     } finally {
         isLoading.value = false;
     }
 };
 
-onMounted(() => {
+onMounted(async () => {
+    // Estrai parametri dall'URL
     extractSearchParams();
-    fetchTrulli();
+
+    // Carica i dati
+    await fetchTrulli();
 });
 
+// Reagisci ai cambiamenti nell'URL
 watch(() => route.query, () => {
     extractSearchParams();
     fetchTrulli();
