@@ -26,6 +26,15 @@ export default defineNuxtConfig({
     },
   },
 
+  runtimeConfig: {
+    mailgun: {
+      apiKey: process.env.MAILGUN_SANDBOX_SENDING_KEY,
+      domain: process.env.MAILGUN_DOMAIN
+    },
+    public: {
+    }
+  },
+
   i18n: {
     restructureDir: "",
     locales,

@@ -88,7 +88,7 @@ const submitError = ref<boolean>(false)
 const { t } = useI18n()
 
 // TODO
-const RECIPIENT_EMAIL = 'info@tuodominio.it'
+const RECIPIENT_EMAIL = 'marcbarnaba@gmail.com'
 
 const validateForm = (): boolean => {
   errors.name = !formData.name ? t('form.name.validation') : undefined

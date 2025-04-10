@@ -1,4 +1,3 @@
-import { defineEventHandler, readBody } from 'h3'
 import ICAL from 'ical.js'
 import { getIcalUrlBySlug } from '../config/ical'
 
@@ -205,12 +204,10 @@ export default defineEventHandler(async (event) => {
         if (!conflittingEvent) {
             result = {
                 available: true,
-                message: `Struttura disponibile dal ${body.checkIn} al ${body.checkOut} per ${body.guests} ospiti!`
             }
         } else {
             result = {
                 available: false,
-                message: `Spiacenti, struttura non disponibile per le date selezionate.`
             }
 
             // Cerca date alternative solo se richiesto esplicitamente
@@ -219,9 +216,6 @@ export default defineEventHandler(async (event) => {
 
                 if (alternativeDates) {
                     result.alternativeDates = alternativeDates
-                    result.message += ` Prova con le date alternative dal ${alternativeDates.checkIn} al ${alternativeDates.checkOut}.`
-                } else {
-                    result.message += ` Non sono state trovate date alternative disponibili nei prossimi 30 giorni.`
                 }
             }
         }
@@ -237,8 +231,7 @@ export default defineEventHandler(async (event) => {
         return {
             status: 500,
             body: {
-                available: false,
-                message: 'Si è verificato un errore durante la verifica della disponibilità'
+                available: false
             }
         }
     }

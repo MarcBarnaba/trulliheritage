@@ -127,7 +127,7 @@ interface Filters {
     checkout: string;
     adults: number;
     amenities: FilterableAmenities;
-    maxPrice: number;
+    maxPrice?: number;
 }
 
 const route = useRoute();
@@ -147,7 +147,6 @@ const filters = reactive<Filters>({
         ac: false,
         pets: false
     },
-    maxPrice: 500
 });
 
 const extractSearchParams = () => {
@@ -225,7 +224,7 @@ const applyFilters = () => {
     if (filters.amenities.pets) query.pets = 'true';
 
     // Aggiungi prezzo massimo solo se diverso dal default
-    if (filters.maxPrice !== 500) query.maxPrice = filters.maxPrice.toString();
+    if (filters.maxPrice && filters.maxPrice !== 500) query.maxPrice = filters.maxPrice.toString();
 
     // Aggiorna l'URL senza ricaricare la pagina
     router.replace({ query });

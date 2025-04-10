@@ -8,7 +8,7 @@
   "footer.contactUs": "Contact Us",
   "footer.email.value": "barnabacostruzionisrl{'@'}gmail.com",
   "footer.phone.value": "+39 320 9461 831",
-  "footer.copyright": "Made with love by Marco",
+  "footer.copyright": "Made with ♥ by Marco",
   "guests": "Ospiti",
   "pool": "Pool",
   "reset": "Reset",
@@ -29,7 +29,6 @@
   "form.button.send": "Send",
   "form.button.sending": "Sending...",
   "amenities": "Amenities",
-  "checkAvailability": "Check Availability",
   "contactHost": "Contact Host",
   "description": "Description",
   "features": " Characteristics ",
@@ -49,5 +48,8 @@
   "form.message.label": "Message",
   "form.name.label": "Name",
   "checkLoading": "Checking...",
-  "checkAvailabilityError": "An error occured during availability check"
+  "checkAvailability.btnLabel": "Check Availability",
+  "checkAvailability.error": "An error occured during availability check",
+  "checkAvailability.failure": "Sorry, property not available for the selected dates.",
+  "checkAvailability.success": "Structure available!"
 }

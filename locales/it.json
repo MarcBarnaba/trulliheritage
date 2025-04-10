@@ -7,7 +7,7 @@
   "footer.contactUs": "Contattaci",
   "footer.email.value": "barnabacostruzionisrl{'@'}gmail.com",
   "footer.phone.value": "+393209461831",
-  "footer.copyright": "Made with &#x2764;&#xfe0e; by Marco",
+  "footer.copyright": "Made with ♥ by Marco",
   "hero.title": "",
   "hero.tagline": "Dove il passato incontra il presente",
   "filters": "Filtri",
@@ -23,7 +23,6 @@
   "host": "Host dal",
   "position": "Posizione",
   "testimonials": "Cosa dicono gli ospiti",
-  "checkAvailability": "Verifica Disponibilità",
   "contactHost": "Contatta l'Host",
   "guests": "Ospiti",
   "pool": "Piscina",
@@ -49,5 +48,8 @@
   "form.button.send": "Invia",
   "form.button.sending": "Invio in corso...",
   "checkLoading": "Verifica in corso...",
-  "checkAvailabilityError": "Si è verificato un errore durante la verifica della disponibilità"
+  "checkAvailability.btnLabel": "Verifica Disponibilità",
+  "checkAvailability.error": "Si è verificato un errore durante la verifica della disponibilità",
+  "checkAvailability.failure": "Spiacenti, struttura non disponibile per le date selezionate.",
+  "checkAvailability.success": "Struttura disponibile!"
 }

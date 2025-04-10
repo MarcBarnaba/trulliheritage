@@ -17,9 +17,14 @@
     "@vuepic/vue-datepicker": "^9.0.3",
     "ical-generator": "^8.1.1",
     "ical.js": "^2.1.0",
+    "mailgun.js": "^12.0.1",
     "nuxt": "^3.12.1",
     "vue": "^3.4.27",
     "vue-router": "^4.3.3",
     "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "@types/form-data": "^2.5.2",
+    "@types/node": "^22.14.0"
   }
 }

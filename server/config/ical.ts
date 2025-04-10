@@ -9,7 +9,7 @@ export interface TrulloCalendarConfig {
  */
 const trulloIcalUrls: Record<string, string> = {
     'trullo-bianco': 'https://ical.booking.com/v1/export?t=xxx&property=trullo-bianco',
-    'trullo-azzurro': 'https://ical.booking.com/v1/export?t=yyy&property=trullo-azzurro',
+    'al-13': 'https://ical.booking.com/v1/export?t=05282182-6dff-46eb-a78e-05ad25c44cf6',
 };
 
 /**

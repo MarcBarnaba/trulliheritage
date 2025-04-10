@@ -196,7 +196,7 @@
                         <button
                             class="w-full bg-teal-600 hover:bg-teal-700 text-white py-3 rounded-lg font-medium transition mb-3"
                             @click="checkAvailability" :disabled="isLoading">
-                            {{ isLoading ? t('checkLoading') : t('checkAvailability') }}</button>
+                            {{ isLoading ? t('checkLoading') : t('checkAvailability.btnLabel') }}</button>
 
                         <a :href="getWhatsAppLink()" target="_blank"
                             class="w-full flex items-center justify-center bg-emerald-500 hover:bg-emerald-600 text-black py-3 rounded-lg font-medium transition">
@@ -252,12 +252,25 @@ const checkAvailability = async () => {
             throw error.value;
         }
 
-        availabilityResult.value = data.value?.body;
+        if (!data.value?.body.available && data.value?.body.message) {
+            console.info(`Struttura non disponibile. Message: ${data.value?.body.message}`)
+        }
+
+        if (data.value?.body.alternativeDates) {
+            console.info(`Alternative dates: ${data.value?.body.alternativeDates.checkIn} - ${data.value?.body.alternativeDates.checkOut}`)
+        }
+
+        availabilityResult.value = {
+            available: data.value?.body.available ?? false,
+            message: data.value?.body.available
+                ? t('checkAvailability.success')
+                : t('checkAvailability.failure')
+        };
     } catch (error) {
         console.error('Errore durante la verifica della disponibilità:', error);
         availabilityResult.value = {
             available: false,
-            message: t('checkAvailabilityError')
+            message: t('checkAvailability.error')
         };
     } finally {
         isLoading.value = false;
