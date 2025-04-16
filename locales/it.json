@@ -52,5 +52,12 @@
   "checkAvailability.error": "Si è verificato un errore durante la verifica della disponibilità",
   "checkAvailability.failure": "Spiacenti, struttura non disponibile per le date selezionate.",
   "checkAvailability.success": "Struttura disponibile!",
-  "menu.experiences": "Esperienze"
+  "menu.experiences": "Esperienze",
+  "error.400": "Richiesta non valida.",
+  "error.401": "Non sei autorizzato ad accedere a questa pagina.",
+  "error.403": "Non hai i permessi per accedere a questa risorsa.",
+  "error.404": "La pagina che stai cercando non esiste o è stata spostata.",
+  "error.500": "Si è verificato un errore sul server. Riprova più tardi.",
+  "error.error": "Errore",
+  "error.unknown": "Si è verificato un errore imprevisto. Riprova più tardi."
 }

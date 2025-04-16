@@ -52,5 +52,12 @@
   "checkAvailability.error": "Une erreur s'est produite lors du contrôle de disponibilité",
   "checkAvailability.failure": "Désolé, propriété non disponible pour les dates sélectionnées.",
   "checkAvailability.success": "Structure disponible!",
-  "menu.experiences": "Expériences"
+  "menu.experiences": "Expériences",
+  "error.400": "Demande non valide.",
+  "error.401": "Non autorisé.",
+  "error.403": "Impossible d'accéder aux ressources.",
+  "error.404": "Non trouvé.",
+  "error.500": "Erreur de serveur. \nRéessayez plus tard.",
+  "error.error": "Erreur",
+  "error.unknown": "Erreur inattendue."
 }

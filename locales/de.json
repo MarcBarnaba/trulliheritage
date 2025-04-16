@@ -52,5 +52,12 @@
   "checkAvailability.error": "Bei der Verfügbarkeitsprüfung trat ein Fehler auf",
   "checkAvailability.failure": "Entschuldigung, Eigentum für die ausgewählten Daten nicht verfügbar.",
   "checkAvailability.success": "Struktur verfügbar!",
-  "menu.experiences": "Erfahrungen"
+  "menu.experiences": "Erfahrungen",
+  "error.400": "Ungültige Anfrage.",
+  "error.401": "Nicht autorisiert.",
+  "error.403": "Konnte nicht auf Ressource zugreifen.",
+  "error.404": "Nicht gefunden.",
+  "error.500": "Serverfehler. \nVersuchen Sie es später erneut.",
+  "error.error": "Fehler",
+  "error.unknown": "Unerwarteter Fehler."
 }

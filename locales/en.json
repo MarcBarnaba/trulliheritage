@@ -52,5 +52,12 @@
   "checkAvailability.error": "An error occured during availability check",
   "checkAvailability.failure": "Sorry, property not available for the selected dates.",
   "checkAvailability.success": "Structure available!",
-  "menu.experiences": "Experiences"
+  "menu.experiences": "Experiences",
+  "error.400": "Invalid Request.",
+  "error.401": "Not Authorized.",
+  "error.403": "Could not access resource.",
+  "error.404": "Not Found.",
+  "error.500": "Server error. Try again later.",
+  "error.unknown": "Unexpected Error.",
+  "error.error": "Error"
 }

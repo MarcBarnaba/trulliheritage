@@ -20,9 +20,15 @@ const { data: experiences } = await useAsyncData(`${route.path}_experiences`, ()
 })
 
 // Carica i contenuti testuali della pagina
-const { data: pageContent } = await useAsyncData(`${route.path}_page`, () => {
+const { data: pageContent, error } = await useAsyncData(`${route.path}_page`, () => {
   return queryCollection(`${locale.value}_pages`).path(`/${locale.value}/pages`).first();
 })
+
+if (error.value) {
+  throw createError({
+    statusCode: 500
+  })
+}
 
 const { getComponentProps, hasComponent } = useComponentProps(pageContent.value)
 
