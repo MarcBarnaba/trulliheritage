@@ -51,5 +51,6 @@
   "checkAvailability.btnLabel": "Verfügbarkeit überprüfen",
   "checkAvailability.error": "Bei der Verfügbarkeitsprüfung trat ein Fehler auf",
   "checkAvailability.failure": "Entschuldigung, Eigentum für die ausgewählten Daten nicht verfügbar.",
-  "checkAvailability.success": "Struktur verfügbar!"
+  "checkAvailability.success": "Struktur verfügbar!",
+  "menu.experiences": "Erfahrungen"
 }

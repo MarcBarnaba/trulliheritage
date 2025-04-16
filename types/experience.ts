@@ -8,6 +8,7 @@ export const ExperienceSchema = z.object({
     coverImage: z.string().optional(),
     images: z.array(z.string()).optional(),
     location: z.string(),
+    mapsSrc: z.string().optional(),
     duration: z.string(), // es. "3h", "2 giorni"
     maxParticipants: z.number(),
     price: z.number(),

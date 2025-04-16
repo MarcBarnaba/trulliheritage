@@ -1,7 +1,6 @@
 ToDo:
 
-- Tooltip icone?
-- Filtri in PLP: Farli funzionare davvero
+- Content: pages
 - SEO: quello che serve, contando sul content
 - Check Performances
 - Review public assets

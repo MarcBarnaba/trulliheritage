@@ -3,10 +3,20 @@ import { TrulloSchema } from './types/trullo'
 import { PostSchema } from './types/post'
 import { ExperienceSchema } from './types/experience'
 import { locales } from './config/locales'
+import { PageSchema } from './types/page'
 
 const localeCodes = locales.map(locale => locale.code)
 
 const collections: Record<string, ReturnType<typeof defineCollection>> = {}
+
+// Pages
+for (const locale of localeCodes) {
+    collections[`${locale}_pages`] = defineCollection({
+        source: `${locale}/pages/*.json`,
+        type: 'page',
+        schema: PageSchema
+    })
+}
 
 // Trulli
 for (const locale of localeCodes) {

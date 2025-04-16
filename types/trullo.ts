@@ -9,6 +9,7 @@ export const TrulloSchema = z.object({
     reviewsCount: z.number(),
     rating: z.number(),
     location: z.string(),
+    mapsSrc: z.string().optional(),
     pricePerNight: z.number().optional(),
     description: z.string(),
     shortDescription: z.string().optional(),

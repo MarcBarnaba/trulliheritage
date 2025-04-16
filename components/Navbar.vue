@@ -25,13 +25,19 @@
               </NuxtLink>
             </li>
             <li>
+              <NuxtLink :to="localePath('/experiences')"
+                class="font-medium py-2 px-1 hover:text-gold transition-colors relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-gold after:transition-all">
+                {{ t('menu.experiences') }}
+              </NuxtLink>
+            </li>
+            <li>
               <a href="#footer"
                 class="font-medium py-2 px-1 hover:text-gold transition-colors relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-gold after:transition-all">
                 {{ t('menu.about') }}
               </a>
             </li>
             <li>
-              <LanguageSelector class="transition-colors" />
+              <LanguageSelector class="transition-colors hover:text-gold" />
             </li>
           </ul>
         </div>
@@ -58,6 +64,13 @@
               class="block px-4 py-3 text-gray-800 hover:bg-gray-100 hover:text-gold transition-colors"
               @click="isMenuOpen = false">
               {{ t('menu.trulli') }}
+            </NuxtLink>
+          </li>
+          <li>
+            <NuxtLink to="/experiences"
+              class="block px-4 py-3 text-gray-800 hover:bg-gray-100 hover:text-gold transition-colors"
+              @click="isMenuOpen = false">
+              {{ t('menu.experiences') }}
             </NuxtLink>
           </li>
           <li>

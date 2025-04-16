@@ -181,17 +181,12 @@ export default defineEventHandler(async (event) => {
         const checkOutDate = new Date(body.checkOut)
 
         // Ottiene l'URL del calendario in base allo slug del trullo
-        console.info(`Recupero URL iCal per il trullo: ${body.trullo.slug}`)
         const icalUrl = getIcalUrlBySlug(body.trullo.slug)
 
         // Recupera gli eventi dal calendario
         const events = await parseICal(icalUrl)
 
-        if (events.length === 0) {
-            console.warn('Eventi estratti: 0')
-        } else {
-            console.info(`Estratti ${events.length} eventi`)
-        }
+        console.info(`Estratti ${events.length} eventi per il trullo: ${body.trullo.slug}`)
 
         // Verifica se l'intervallo di date richiesto si sovrappone con uno degli eventi
         const conflittingEvent = events.find(event =>

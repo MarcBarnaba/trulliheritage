@@ -49,7 +49,7 @@ const props = withDefaults(defineProps<ParagraphProps>(), {
   showMorePath: '/'
 });
 
-const titleClass = computed(() => `text-${props.titleSize} font-bold ${props.showMoreBtn ? '' : 'mb-4'} `);
+const titleClass = computed(() => `text-${props.titleSize} font-bold ${(props.showMoreBtn || !props.showMoreBtn && !props.paragraph) ? '' : 'mb-4'} `);
 
 const alignmentClass = computed(
   () => `text-${props.align} p-8 `

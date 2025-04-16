@@ -51,5 +51,6 @@
   "checkAvailability.btnLabel": "Check Availability",
   "checkAvailability.error": "An error occured during availability check",
   "checkAvailability.failure": "Sorry, property not available for the selected dates.",
-  "checkAvailability.success": "Structure available!"
+  "checkAvailability.success": "Structure available!",
+  "menu.experiences": "Experiences"
 }

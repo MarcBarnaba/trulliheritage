@@ -51,5 +51,6 @@
   "checkAvailability.btnLabel": "Verifica Disponibilità",
   "checkAvailability.error": "Si è verificato un errore durante la verifica della disponibilità",
   "checkAvailability.failure": "Spiacenti, struttura non disponibile per le date selezionate.",
-  "checkAvailability.success": "Struttura disponibile!"
+  "checkAvailability.success": "Struttura disponibile!",
+  "menu.experiences": "Esperienze"
 }

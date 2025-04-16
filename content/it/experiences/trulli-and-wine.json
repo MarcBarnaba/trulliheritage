@@ -1,0 +1,44 @@
+{
+  "slug": "trulli-and-wine",
+  "title": "Tour dei Trulli con degustazione vini",
+  "shortDescription": "Scopri i segreti dei trulli di Alberobello e degusta i migliori vini locali",
+  "description": "Unisciti a questa esperienza unica nel suo genere per scoprire la storia e l'architettura dei famosi trulli di Alberobello, Patrimonio UNESCO. Dopo una passeggiata guidata tra i vicoli caratteristici del quartiere Monti, ti condurremo in una cantina tradizionale per degustare una selezione di vini pugliesi accompagnati da prodotti tipici locali. Un'esperienza che unisce cultura, tradizione e sapori autentici della Puglia.",
+  "coverImage": "/experiences/wine.jpg",
+  "location": "Alberobello",
+  "duration": "3h",
+  "maxParticipants": 12,
+  "price": 45,
+  "included": [
+    "Guida locale certificata",
+    "Degustazione di 3 vini",
+    "Assaggio prodotti tipici",
+    "Tour privato nei trulli"
+  ],
+  "whatToBring": ["Scarpe comode", "Bottiglia d'acqua", "Cappello per il sole"],
+  "languages": ["it", "en", "fr"],
+  "host": {
+    "name": "Maria Rossi",
+    "avatar": "https://avatar.iran.liara.run/public/5",
+    "description": "Sono una guida turistica con 15 anni di esperienza e grande conoscitrice dei vini pugliesi. Nata e cresciuta ad Alberobello, condivido con passione le storie e le tradizioni della mia terra."
+  },
+  "reviews": [
+    {
+      "name": "Francesco B.",
+      "rating": 5,
+      "text": "Esperienza fantastica! Maria è preparatissima e la degustazione di vini è stata eccellente.",
+      "date": "2025-03-15"
+    },
+    {
+      "name": "Sarah J.",
+      "rating": 4,
+      "text": "Bellissimo tour, molto informativo. I vini erano deliziosi!",
+      "date": "2025-02-20"
+    },
+    {
+      "name": "Hans M.",
+      "rating": 5,
+      "text": "Un'esperienza indimenticabile, abbiamo imparato tanto sulla cultura locale e i vini erano straordinari.",
+      "date": "2025-01-10"
+    }
+  ]
+}

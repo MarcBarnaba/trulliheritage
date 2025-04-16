@@ -1,8 +1,8 @@
 <template>
-  <div class="flex flex-col lg:flex-row items-center mx-auto h-auto md:h-80 lg:h-80 overflow-hidden">
-    <NuxtImg :src="imgPath" class="w-full lg:w-2/4 max-w-full object-contain" />
-    <div class="max-w-1/2 ml-8">
-      <IconsMint />
+  <div class="flex flex-col lg:flex-row items-center mx-auto h-auto overflow-hidden">
+    <NuxtImg :src="imgPath" class="w-full lg:w-1/2 object-cover lg:h-full" />
+    <div class="w-full lg:w-1/2 lg:pl-8 py-4 lg:py-0">
+      <IconsMint class="mb-4" />
       <Paragraph align="left" v-bind="paragraph" />
     </div>
   </div>
@@ -11,9 +11,8 @@
 <script setup lang="ts">
 import type { ParagraphProps } from './Paragraph.vue';
 
-
 defineProps<{
-  paragraph: ParagraphProps,
+  paragraph: ParagraphProps;
   imgPath: string;
 }>();
 </script>

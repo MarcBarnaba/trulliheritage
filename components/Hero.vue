@@ -22,12 +22,12 @@
 </template>
 
 <script setup lang="ts">
-
-defineProps<{
+export interface HeroProps {
   title?: string;
   tagline: string;
   showTravelBar: boolean;
   slim?: boolean;
-}>();
+}
+defineProps<HeroProps>();
 
 </script>

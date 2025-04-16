@@ -1,0 +1,50 @@
+{
+  "title": "Home - TrulliHeritage",
+  "description": "Scopri l'autenticità dei trulli in Puglia",
+  "components": [
+    {
+      "type": "Hero",
+      "props": {
+        "showTravelBar": true,
+        "title": "Scopri l'autenticità dei trulli",
+        "tagline": "Tradizione, storia e comfort nel cuore della Puglia"
+      }
+    },
+    {
+      "type": "Quote",
+      "props": {
+        "text": "TrulliHeritage significa mettere al centro la storia e l'originalità dei trulli, esaltando l'eredità familiare e la cultura locale."
+      }
+    },
+    {
+      "type": "TextImg",
+      "props": {
+        "paragraph": {
+          "titleSize": "3xl",
+          "title": "Titolo",
+          "paragraph": "Alberobello, capitale dei trulli, è molto più di un luogo: è un viaggio nel tempo, dove ogni vicolo racconta storie antiche e ogni angolo rivela un segreto."
+        },
+        "imgPath": "/13/ricardo-gomez-angel-jv3kvNBxz5s-unsplash.jpg"
+      }
+    },
+    {
+      "type": "CardsSlider",
+      "props": {
+        "title": "Trulli",
+        "showMore": true,
+        "showMorePath": "/trulli"
+      }
+    },
+    {
+      "type": "ExpSlider",
+      "props": {
+        "title": "Vivi la Puglia",
+        "showMore": false
+      }
+    },
+    {
+      "type": "Contact",
+      "props": {}
+    }
+  ]
+}
