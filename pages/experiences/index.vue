@@ -1,5 +1,5 @@
 <template>
-    <Hero :show-travel-bar="false" :slim="true" title="Esperienze in Valle d'Itria"
+    <Hero :show-travel-bar="false" :slim="true" title="Esperienze in Valle d'Itria" :img-src="'/global/hero.jpg'"
         tagline="Per un soggiorno indimenticabile tra tradizione pugliese e comfort moderni" />
     <ExperiencesGrid />
 </template>

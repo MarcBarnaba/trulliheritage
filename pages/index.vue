@@ -30,7 +30,7 @@ const p = computed(() => ({
 
 <template>
   <div>
-    <Hero :show-travel-bar="true" :title="p.hero.title" :tagline="p.hero.tagline">
+    <Hero :show-travel-bar="true" :title="p.hero.title" :tagline="p.hero.tagline" :img-src="'/global/hero.jpg'">
       <template #btn>
         <Buttoon color="#CBA135" :textWhite="true" :text="'Esplora i Trulli'" :show-icon="true" url="trulli"
           class="block md:hidden" />
@@ -44,11 +44,11 @@ const p = computed(() => ({
       titleSize: '3xl',
       title: 'Titolo',
       paragraph: 'Alberobello, capitale dei trulli, è molto più di un luogo: è un viaggio nel tempo, dove ogni vicolo racconta storie antiche e ogni angolo rivela un segreto.'
-    }" img-path="/13/ricardo-gomez-angel-jv3kvNBxz5s-unsplash.jpg" />
+    }" img-path="/global/coni.jpg" />
 
     <CardsSlider v-if="trulli" title="Trulli" :structures="trulli" :show-more="true" showMorePath="/trulli" />
 
-    <Parallax :src="'/vert.jpg'" height="32rem" :parallaxStrength="0.3" />
+    <Parallax :src="'/global/vert.jpg'" height="32rem" :parallaxStrength="0.3" />
 
     <ExpSlider v-if="experiences" title="Vivi la Puglia" :experiences="experiences" :show-more="true"
       showMorePath="/experiences" />

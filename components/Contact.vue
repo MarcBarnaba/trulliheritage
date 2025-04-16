@@ -2,7 +2,7 @@
   <div class="flex flex-col lg:flex-row items-center justify-center w-full py-8">
     <div class="flex flex-col items-center justify-center h-full w-full lg:w-1/2">
       <Paragraph :title="t('knowMore')" :title-size="'3xl'"></Paragraph>
-      <NuxtImg :src="'/contact.png'" class="pb-8 w-1/2 flex-grow" />
+      <NuxtImg :src="'humans/contact.png'" class="pb-8 w-1/2 flex-grow" />
     </div>
     <div class="w-full lg:w-1/2 px-4 lg:px-12">
       <!-- <Paragraph :title="'Contattaci'" :title-size="'3xl'" /> -->

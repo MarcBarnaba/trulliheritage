@@ -31,7 +31,7 @@
             </template>
         </Paragraph>
 
-        <ImgGrid :images="[...trullo?.images ?? [], ...trullo?.images ?? []]" class="py-8" />
+        <ImgGrid :images="trullo?.images" class="py-8" />
 
         <div class="container mx-auto px-8 pb-8">
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
