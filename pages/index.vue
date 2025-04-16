@@ -1,5 +1,11 @@
 <script setup lang="ts">
+import type { ButtoonProps } from '~/components/Buttoon.vue';
+import type { CardsSliderProps } from '~/components/CardsSlider.vue';
+import type { ExpSliderProps } from '~/components/ExpSlider.vue';
 import type { HeroProps } from '~/components/Hero.vue';
+import type { ParallaxProps } from '~/components/Parallax.vue';
+import type { QuoteProps } from '~/components/Quote.vue';
+import type { TextImgProps } from '~/components/TextImg.vue';
 
 
 const route = useRoute()
@@ -15,13 +21,19 @@ const { data: experiences } = await useAsyncData(`${route.path}_experiences`, ()
 
 // Carica i contenuti testuali della pagina
 const { data: pageContent } = await useAsyncData(`${route.path}_page`, () => {
-  return queryCollection(`${locale.value}_pages`).first();
+  return queryCollection(`${locale.value}_pages`).path(`/${locale.value}/pages`).first();
 })
 
-const { getComponentProps, getTextImgProps, hasComponent } = useComponentProps(pageContent.value)
+const { getComponentProps, hasComponent } = useComponentProps(pageContent.value)
 
 const p = computed(() => ({
-  hero: getComponentProps('Hero') as HeroProps
+  hero: getComponentProps('Hero') as HeroProps,
+  heroBtn: getComponentProps('HeroButtoon') as ButtoonProps,
+  quote: getComponentProps('Quote') as QuoteProps,
+  textImg: getComponentProps('TextImg') as TextImgProps,
+  cardsSlider: getComponentProps('CardsSlider') as CardsSliderProps,
+  parallax: getComponentProps('Parallax') as ParallaxProps,
+  expSlider: getComponentProps('ExpSlider') as ExpSliderProps
 }))
 
 
@@ -30,28 +42,25 @@ const p = computed(() => ({
 
 <template>
   <div>
-    <Hero :show-travel-bar="true" :title="p.hero.title" :tagline="p.hero.tagline" :img-src="'/global/hero.jpg'">
+    <Hero :show-travel-bar="p.hero.showTravelBar" :title="p.hero.title" :tagline="p.hero.tagline"
+      :img-src="p.hero.imgSrc">
       <template #btn>
-        <Buttoon color="#CBA135" :textWhite="true" :text="'Esplora i Trulli'" :show-icon="true" url="trulli"
-          class="block md:hidden" />
+        <Buttoon :color="p.heroBtn.color" :textWhite="p.heroBtn.textWhite" :text="p.heroBtn.text"
+          :show-icon="p.heroBtn.showIcon" :url="p.heroBtn.url" class="block md:hidden" />
       </template>
     </Hero>
 
-    <Quote
-      text="TrulliHeritage significa mettere al centro la storia e l’originalità dei trulli, esaltando l’eredità familiare e la cultura locale." />
+    <Quote :text="p.quote.text" />
 
-    <TextImg :paragraph="{
-      titleSize: '3xl',
-      title: 'Titolo',
-      paragraph: 'Alberobello, capitale dei trulli, è molto più di un luogo: è un viaggio nel tempo, dove ogni vicolo racconta storie antiche e ogni angolo rivela un segreto.'
-    }" img-path="/global/coni.jpg" />
+    <TextImg :paragraph="p.textImg.paragraph" :img-path="p.textImg.imgPath" />
 
-    <CardsSlider v-if="trulli" title="Trulli" :structures="trulli" :show-more="true" showMorePath="/trulli" />
+    <CardsSlider v-if="trulli" :title="p.cardsSlider.title" :structures="trulli" :show-more="p.cardsSlider.showMore"
+      :showMorePath="p.cardsSlider.showMorePath" />
 
-    <Parallax :src="'/global/vert.jpg'" height="32rem" :parallaxStrength="0.3" />
+    <Parallax :src="p.parallax.src" height="32rem" :parallaxStrength="p.parallax.parallaxStrength" />
 
-    <ExpSlider v-if="experiences" title="Vivi la Puglia" :experiences="experiences" :show-more="true"
-      showMorePath="/experiences" />
+    <ExpSlider v-if="experiences" :title="p.expSlider.title" :experiences="experiences"
+      :show-more="p.expSlider.showMore" :showMorePath="p.expSlider.showMorePath" />
 
     <Contact />
 

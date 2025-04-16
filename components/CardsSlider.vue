@@ -19,14 +19,16 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import type { TrulloType } from '~/types/trullo';
 
-const localePath = useLocalePath()
-
-withDefaults(defineProps<{
+export interface CardsSliderProps {
   title?: string
   structures: Partial<TrulloType>[],
   showMore?: boolean,
   showMorePath?: string
-}>(), {
+}
+
+const localePath = useLocalePath()
+
+withDefaults(defineProps<CardsSliderProps>(), {
   showMore: false,
   showMorePath: '/trulli'
 })

@@ -8,9 +8,10 @@
 </template>
 
 <script setup lang="ts">
-const props = defineProps<{
-  text: string
-}>();
+export interface QuoteProps {
+  text: string;
+}
+const props = defineProps<QuoteProps>();
 
 // Divide il testo nella prima parola e nel resto
 const [firstWord, ...rest] = props.text.split(" ");

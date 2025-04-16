@@ -12,7 +12,7 @@
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted, computed } from 'vue';
 
-interface ParallaxProps {
+export interface ParallaxProps {
     src: string;
     parallaxStrength?: number;
 }

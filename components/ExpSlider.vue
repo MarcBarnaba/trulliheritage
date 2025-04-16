@@ -19,14 +19,16 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import type { ExperienceType } from '~/types/experience';
 
-const localePath = useLocalePath()
-
-withDefaults(defineProps<{
+export interface ExpSliderProps {
     title?: string
     experiences: Partial<ExperienceType>[],
     showMore?: boolean,
     showMorePath?: string
-}>(), {
+}
+
+const localePath = useLocalePath()
+
+withDefaults(defineProps<ExpSliderProps>(), {
     showMore: false,
     showMorePath: '/experiences'
 })

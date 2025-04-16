@@ -10,9 +10,9 @@
 
 <script setup lang="ts">
 import type { ParagraphProps } from './Paragraph.vue';
-
-defineProps<{
+export interface TextImgProps {
   paragraph: ParagraphProps;
   imgPath: string;
-}>();
+}
+defineProps<TextImgProps>();
 </script>

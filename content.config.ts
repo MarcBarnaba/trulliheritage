@@ -12,7 +12,7 @@ const collections: Record<string, ReturnType<typeof defineCollection>> = {}
 // Pages
 for (const locale of localeCodes) {
     collections[`${locale}_pages`] = defineCollection({
-        source: `${locale}/pages/*.json`,
+        source: `${locale}/pages/**/*.json`,
         type: 'page',
         schema: PageSchema
     })

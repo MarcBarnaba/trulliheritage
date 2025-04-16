@@ -15,18 +15,19 @@
 </template>
 
 <script setup lang="ts">
+export interface ButtoonProps {
+  text: string;
+  textWhite?: boolean;
+  url?: string;
+  color?: string;
+  showIcon?: boolean;
+}
 
 const localePath = useLocalePath()
 
 
 const props = withDefaults(
-  defineProps<{
-    text: string;
-    textWhite?: boolean;
-    url?: string;
-    color?: string;
-    showIcon?: boolean;
-  }>(),
+  defineProps<ButtoonProps>(),
   {
     textWhite: true,
     color: "#000000", // Default color (black)

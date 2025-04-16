@@ -6,8 +6,19 @@
       "type": "Hero",
       "props": {
         "showTravelBar": true,
+        "imgSrc": "/global/hero.jpg",
         "title": "Scopri l'autenticità dei trulli",
         "tagline": "Tradizione, storia e comfort nel cuore della Puglia"
+      }
+    },
+    {
+      "type": "HeroButtoon",
+      "props": {
+        "color": "#CBA135",
+        "showIcon": true,
+        "url": "trulli",
+        "textWhite": true,
+        "text": "Esplora i Trulli"
       }
     },
     {
@@ -24,7 +35,7 @@
           "title": "Titolo",
           "paragraph": "Alberobello, capitale dei trulli, è molto più di un luogo: è un viaggio nel tempo, dove ogni vicolo racconta storie antiche e ogni angolo rivela un segreto."
         },
-        "imgPath": "/13/ricardo-gomez-angel-jv3kvNBxz5s-unsplash.jpg"
+        "imgPath": "/global/coni.jpg"
       }
     },
     {
@@ -36,10 +47,18 @@
       }
     },
     {
+      "type": "Parallax",
+      "props": {
+        "src": "/global/vert.jpg",
+        "parallaxStrength": 0.3
+      }
+    },
+    {
       "type": "ExpSlider",
       "props": {
         "title": "Vivi la Puglia",
-        "showMore": false
+        "showMore": true,
+        "showMorePath": "/experiences"
       }
     },
     {
