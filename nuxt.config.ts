@@ -38,7 +38,7 @@ export default defineNuxtConfig({
 
     // TODO
     sitemap: [
-      process.env.NUXT_PUBLIC_SITE_URL + '/sitemap.xml',
+      '/sitemap.xml',
     ]
   },
 
