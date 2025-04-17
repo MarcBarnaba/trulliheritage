@@ -22,4 +22,9 @@ const { getComponentProps, hasComponent } = useComponentProps(pageContent.value)
 const p = computed(() => ({
     hero: getComponentProps('Hero') as HeroProps,
 }))
+
+useSeo({
+    title: pageContent.value?.title,
+    description: pageContent.value?.description,
+})
 </script>

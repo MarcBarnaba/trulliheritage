@@ -17,6 +17,12 @@ if (!experience.value) {
         statusCode: 404
     })
 }
+
+useSeo({
+    title: experience.value?.title,
+    description: experience.value?.description,
+    ogImage: experience.value?.coverImage
+})
 </script>
 
 <template>

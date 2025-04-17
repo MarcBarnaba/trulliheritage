@@ -6,6 +6,7 @@ import type { HeroProps } from '~/components/Hero.vue';
 import type { ParallaxProps } from '~/components/Parallax.vue';
 import type { QuoteProps } from '~/components/Quote.vue';
 import type { TextImgProps } from '~/components/TextImg.vue';
+import { useSeo } from '~/composables/useSeo';
 
 
 const route = useRoute()
@@ -43,7 +44,10 @@ const p = computed(() => ({
 }))
 
 
-
+useSeo({
+  title: pageContent.value?.title,
+  description: pageContent.value?.description
+})
 </script>
 
 <template>

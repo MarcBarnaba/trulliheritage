@@ -3,13 +3,9 @@ import { locales } from "./config/locales";
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
+  ssr: true,
 
-  modules: [
-    "@nuxtjs/tailwindcss",
-    "@nuxt/image",
-    '@nuxtjs/i18n',
-    '@nuxt/content'
-  ],
+  modules: ["@nuxtjs/tailwindcss", "@nuxt/image", '@nuxtjs/i18n', "@nuxtjs/robots", "@nuxtjs/sitemap", '@nuxt/content'],
 
   app: {
     head: {
@@ -24,6 +20,26 @@ export default defineNuxtConfig({
         },
       ],
     },
+  },
+
+  site: {
+    url: 'https://trulliheritage.com',
+    name: 'Trulli Heritage'
+  },
+
+  robots: {
+    allow: '/',
+    disallow: [
+      '/admin',
+      '/temp',
+      '/*.json',
+      '/*.xml'
+    ],
+
+    // TODO
+    sitemap: [
+      process.env.NUXT_PUBLIC_SITE_URL + '/sitemap.xml',
+    ]
   },
 
   runtimeConfig: {

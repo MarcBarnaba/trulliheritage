@@ -13,6 +13,8 @@
     "@nuxt/content": "^3.4.0",
     "@nuxt/image": "^1.8.0",
     "@nuxtjs/i18n": "^9.0.0-rc.2",
+    "@nuxtjs/robots": "^5.2.10",
+    "@nuxtjs/sitemap": "^7.2.10",
     "@nuxtjs/tailwindcss": "^6.12.0",
     "@vuepic/vue-datepicker": "^9.0.3",
     "ical-generator": "^8.1.1",

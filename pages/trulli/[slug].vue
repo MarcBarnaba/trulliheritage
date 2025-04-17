@@ -17,6 +17,12 @@ if (!trullo.value) {
         statusCode: 404
     })
 }
+
+useSeo({
+    title: trullo.value?.title,
+    description: trullo.value?.description,
+    ogImage: trullo.value?.coverImage
+})
 </script>
 
 <template>
