@@ -3,7 +3,7 @@
     'relative overflow-hidden',
     slim ? 'h-96' : 'h-screen'
   ]">
-    <NuxtImg :src="imgSrc" class="object-cover w-full h-full" />
+    <NuxtImg preload :src="imgSrc" class="object-cover w-full h-full" />
     <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center text-center overflow-hidden " :class="[
       slim ? 'pt-8' : 'pt-16'
     ]">

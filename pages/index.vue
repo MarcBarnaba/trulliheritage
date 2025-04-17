@@ -14,11 +14,11 @@ const { t, locale } = useI18n()
 
 const { data: trulli } = await useAsyncData(`${route.path}_trulli`, () => {
   return queryCollection(`${locale.value}_trulli`).all();
-})
+}, { lazy: true })
 
 const { data: experiences } = await useAsyncData(`${route.path}_experiences`, () => {
   return queryCollection(`${locale.value}_experiences`).all();
-})
+}, { lazy: true })
 
 // Carica i contenuti testuali della pagina
 const { data: pageContent, error } = await useAsyncData(`${route.path}_page`, () => {

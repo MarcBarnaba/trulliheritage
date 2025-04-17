@@ -10,6 +10,9 @@ export default defineNuxtConfig({
   app: {
     head: {
       link: [
+        // Material Icons con preconnect e preload
+        { rel: "preconnect", href: "https://fonts.googleapis.com" },
+        { rel: "preconnect", href: "https://fonts.gstatic.com" },
         {
           rel: "stylesheet",
           href: "https://fonts.googleapis.com/icon?family=Material+Icons",
