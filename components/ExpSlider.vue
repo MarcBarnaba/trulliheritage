@@ -1,7 +1,7 @@
 <template>
     <section id="experiences" class="py-8 px-8">
         <Paragraph v-if="title" :title="title" titleSize="3xl" :showMoreBtn="showMore"
-            :showMorePath="localePath(showMorePath)" />
+            :showMorePath="localePath(showMorePath)" align="left" />
 
         <Swiper :modules="[Pagination]" :slides-per-view="'auto'" :space-between="16" :pagination="{ clickable: true }"
             class="my-8">

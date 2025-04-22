@@ -1,6 +1,6 @@
 <template>
   <section id="structures" class="py-8 px-8">
-    <Paragraph v-if="title" :title="title" titleSize="3xl" :showMoreBtn="showMore"
+    <Paragraph v-if="title" :title="title" titleSize="3xl" :showMoreBtn="showMore" align="left"
       :showMorePath="localePath(showMorePath)" />
     <Swiper :modules="[Pagination]" :slides-per-view="'auto'" :space-between="16" :pagination="{ clickable: true }"
       class="my-8">

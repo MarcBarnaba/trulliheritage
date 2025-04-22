@@ -3,7 +3,7 @@
     <div class="relative w-full">
       <slot></slot>
       <div :class="slotsClass">
-        <div class="flex justify-between items-center">
+        <div :class="`flex justify-${align === 'center' ? 'center' : 'between'} items-center`">
           <div v-if="title" :class="titleClass">{{ title }}</div>
           <NuxtLink v-if="showMoreBtn" :to="showMorePath">
             <div class="rounded-full border">
@@ -52,7 +52,7 @@ const props = withDefaults(defineProps<ParagraphProps>(), {
 const titleClass = computed(() => `text-${props.titleSize} font-bold ${(props.showMoreBtn || !props.showMoreBtn && !props.paragraph) ? '' : 'mb-4'} `);
 
 const alignmentClass = computed(
-  () => `text-${props.align} p-8 `
+  () => `text-${props.align} py-8 `
 );
 
 const slotsClass = computed(
