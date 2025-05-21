@@ -3,7 +3,9 @@ import { locales } from "./config/locales";
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  ssr: true,
+  ssr: process.env.NODE_ENV === 'production'
+    ? false // Deploy to GH Pages
+    : true,
 
   modules: ["@nuxtjs/tailwindcss", "@nuxt/image", '@nuxtjs/i18n', "@nuxtjs/robots", "@nuxtjs/sitemap", '@nuxt/content'],
 
