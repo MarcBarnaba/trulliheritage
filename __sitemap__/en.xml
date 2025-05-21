@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="/trulliheritage/__sitemap__/style.xsl"?>
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd http://www.google.com/schemas/sitemap-image/1.1 http://www.google.com/schemas/sitemap-image/1.1/sitemap-image.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>https://trulliheritage.com/trulliheritage/en</loc>
+        <xhtml:link rel="alternate" hreflang="it" href="https://trulliheritage.com/trulliheritage/it" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://trulliheritage.com/trulliheritage/en" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://trulliheritage.com/trulliheritage/en" />
+        <image:image>
+            <image:loc>https://trulliheritage.com/_ipx/_/global/hero.jpg</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://trulliheritage.com/_ipx/_/global/coni.jpg</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://trulliheritage.com/trulli/al-13/PHOTO-2024-05-07-13-40-52.jpg</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://trulliheritage.com/experiences/wine.jpg</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://avatar.iran.liara.run/public/3</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://avatar.iran.liara.run/public/6</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://avatar.iran.liara.run/public/1</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://avatar.iran.liara.run/public/4</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://avatar.iran.liara.run/public/5</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://avatar.iran.liara.run/public/2</image:loc>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://trulliheritage.com/trulliheritage/it</loc>
+        <image:image>
+            <image:loc>https://trulliheritage.com/_ipx/_/global/hero.jpg</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://trulliheritage.com/_ipx/_/global/coni.jpg</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://trulliheritage.com/trulli/al-13/PHOTO-2024-05-07-13-40-52.jpg</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://trulliheritage.com/experiences/wine.jpg</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://avatar.iran.liara.run/public/5</image:loc>
+        </image:image>
+        <xhtml:link rel="alternate" href="https://trulliheritage.com/trulliheritage/it" hreflang="x-default" />
+        <xhtml:link rel="alternate" href="https://trulliheritage.com/trulliheritage/it" hreflang="en" />
+    </url>
+    <url>
+        <loc>https://trulliheritage.com/trulliheritage/en/experiences</loc>
+        <xhtml:link rel="alternate" hreflang="it" href="https://trulliheritage.com/trulliheritage/it/experiences" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://trulliheritage.com/trulliheritage/en/experiences" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://trulliheritage.com/trulliheritage/en/experiences" />
+        <image:image>
+            <image:loc>https://trulliheritage.com/_ipx/_/global/hero.jpg</image:loc>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://trulliheritage.com/trulliheritage/en/trulli</loc>
+        <xhtml:link rel="alternate" hreflang="it" href="https://trulliheritage.com/trulliheritage/it/trulli" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://trulliheritage.com/trulliheritage/en/trulli" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://trulliheritage.com/trulliheritage/en/trulli" />
+        <image:image>
+            <image:loc>https://trulliheritage.com/_ipx/_/global/hero.jpg</image:loc>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://trulliheritage.com/trulliheritage/it/experiences</loc>
+        <image:image>
+            <image:loc>https://trulliheritage.com/_ipx/_/global/hero.jpg</image:loc>
+        </image:image>
+        <xhtml:link rel="alternate" href="https://trulliheritage.com/trulliheritage/it/experiences" hreflang="x-default" />
+        <xhtml:link rel="alternate" href="https://trulliheritage.com/trulliheritage/it/experiences" hreflang="en" />
+    </url>
+    <url>
+        <loc>https://trulliheritage.com/trulliheritage/it/trulli</loc>
+        <image:image>
+            <image:loc>https://trulliheritage.com/_ipx/_/global/hero.jpg</image:loc>
+        </image:image>
+        <xhtml:link rel="alternate" href="https://trulliheritage.com/trulliheritage/it/trulli" hreflang="x-default" />
+        <xhtml:link rel="alternate" href="https://trulliheritage.com/trulliheritage/it/trulli" hreflang="en" />
+    </url>
+    <url>
+        <loc>https://trulliheritage.com/trulliheritage/__nuxt_content/en_experiences/sql_dump</loc>
+        <xhtml:link rel="alternate" href="https://trulliheritage.com/trulliheritage/__nuxt_content/en_experiences/sql_dump" hreflang="x-default" />
+        <xhtml:link rel="alternate" href="https://trulliheritage.com/trulliheritage/__nuxt_content/en_experiences/sql_dump" hreflang="en" />
+    </url>
+    <url>
+        <loc>https://trulliheritage.com/trulliheritage/__nuxt_content/en_pages/sql_dump</loc>
+        <xhtml:link rel="alternate" href="https://trulliheritage.com/trulliheritage/__nuxt_content/en_pages/sql_dump" hreflang="x-default" />
+        <xhtml:link rel="alternate" href="https://trulliheritage.com/trulliheritage/__nuxt_content/en_pages/sql_dump" hreflang="en" />
+    </url>
+    <url>
+        <loc>https://trulliheritage.com/trulliheritage/__nuxt_content/en_posts/sql_dump</loc>
+        <xhtml:link rel="alternate" href="https://trulliheritage.com/trulliheritage/__nuxt_content/en_posts/sql_dump" hreflang="x-default" />
+        <xhtml:link rel="alternate" href="https://trulliheritage.com/trulliheritage/__nuxt_content/en_posts/sql_dump" hreflang="en" />
+    </url>
+    <url>
+        <loc>https://trulliheritage.com/trulliheritage/__nuxt_content/en_trulli/sql_dump</loc>
+        <xhtml:link rel="alternate" href="https://trulliheritage.com/trulliheritage/__nuxt_content/en_trulli/sql_dump" hreflang="x-default" />
+        <xhtml:link rel="alternate" href="https://trulliheritage.com/trulliheritage/__nuxt_content/en_trulli/sql_dump" hreflang="en" />
+    </url>
+    <url>
+        <loc>https://trulliheritage.com/trulliheritage/__nuxt_content/it_experiences/sql_dump</loc>
+        <xhtml:link rel="alternate" href="https://trulliheritage.com/trulliheritage/__nuxt_content/it_experiences/sql_dump" hreflang="x-default" />
+        <xhtml:link rel="alternate" href="https://trulliheritage.com/trulliheritage/__nuxt_content/it_experiences/sql_dump" hreflang="en" />
+    </url>
+    <url>
+        <loc>https://trulliheritage.com/trulliheritage/__nuxt_content/it_pages/sql_dump</loc>
+        <xhtml:link rel="alternate" href="https://trulliheritage.com/trulliheritage/__nuxt_content/it_pages/sql_dump" hreflang="x-default" />
+        <xhtml:link rel="alternate" href="https://trulliheritage.com/trulliheritage/__nuxt_content/it_pages/sql_dump" hreflang="en" />
+    </url>
+    <url>
+        <loc>https://trulliheritage.com/trulliheritage/__nuxt_content/it_posts/sql_dump</loc>
+        <xhtml:link rel="alternate" href="https://trulliheritage.com/trulliheritage/__nuxt_content/it_posts/sql_dump" hreflang="x-default" />
+        <xhtml:link rel="alternate" href="https://trulliheritage.com/trulliheritage/__nuxt_content/it_posts/sql_dump" hreflang="en" />
+    </url>
+    <url>
+        <loc>https://trulliheritage.com/trulliheritage/__nuxt_content/it_trulli/sql_dump</loc>
+        <xhtml:link rel="alternate" href="https://trulliheritage.com/trulliheritage/__nuxt_content/it_trulli/sql_dump" hreflang="x-default" />
+        <xhtml:link rel="alternate" href="https://trulliheritage.com/trulliheritage/__nuxt_content/it_trulli/sql_dump" hreflang="en" />
+    </url>
+    <url>
+        <loc>https://trulliheritage.com/trulliheritage/en/experiences/bosco-selva-walk</loc>
+        <image:image>
+            <image:loc>https://trulliheritage.com/experiences/wine.jpg</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://avatar.iran.liara.run/public/3</image:loc>
+        </image:image>
+        <xhtml:link rel="alternate" href="https://trulliheritage.com/trulliheritage/en/experiences/bosco-selva-walk" hreflang="x-default" />
+        <xhtml:link rel="alternate" href="https://trulliheritage.com/trulliheritage/en/experiences/bosco-selva-walk" hreflang="en" />
+    </url>
+    <url>
+        <loc>https://trulliheritage.com/trulliheritage/en/experiences/country-walk</loc>
+        <image:image>
+            <image:loc>https://trulliheritage.com/experiences/wine.jpg</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://avatar.iran.liara.run/public/6</image:loc>
+        </image:image>
+        <xhtml:link rel="alternate" href="https://trulliheritage.com/trulliheritage/en/experiences/country-walk" hreflang="x-default" />
+        <xhtml:link rel="alternate" href="https://trulliheritage.com/trulliheritage/en/experiences/country-walk" hreflang="en" />
+    </url>
+    <url>
+        <loc>https://trulliheritage.com/trulliheritage/en/experiences/pirro-valley-hike</loc>
+        <image:image>
+            <image:loc>https://trulliheritage.com/experiences/wine.jpg</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://avatar.iran.liara.run/public/1</image:loc>
+        </image:image>
+        <xhtml:link rel="alternate" href="https://trulliheritage.com/trulliheritage/en/experiences/pirro-valley-hike" hreflang="x-default" />
+        <xhtml:link rel="alternate" href="https://trulliheritage.com/trulliheritage/en/experiences/pirro-valley-hike" hreflang="en" />
+    </url>
+    <url>
+        <loc>https://trulliheritage.com/trulliheritage/en/experiences/relaxing-massage</loc>
+        <image:image>
+            <image:loc>https://trulliheritage.com/experiences/wine.jpg</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://avatar.iran.liara.run/public/4</image:loc>
+        </image:image>
+        <xhtml:link rel="alternate" href="https://trulliheritage.com/trulliheritage/en/experiences/relaxing-massage" hreflang="x-default" />
+        <xhtml:link rel="alternate" href="https://trulliheritage.com/trulliheritage/en/experiences/relaxing-massage" hreflang="en" />
+    </url>
+    <url>
+        <loc>https://trulliheritage.com/trulliheritage/en/experiences/trulli-and-wine</loc>
+        <image:image>
+            <image:loc>https://trulliheritage.com/experiences/wine.jpg</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://avatar.iran.liara.run/public/5</image:loc>
+        </image:image>
+        <xhtml:link rel="alternate" href="https://trulliheritage.com/trulliheritage/en/experiences/trulli-and-wine" hreflang="x-default" />
+        <xhtml:link rel="alternate" href="https://trulliheritage.com/trulliheritage/en/experiences/trulli-and-wine" hreflang="en" />
+    </url>
+    <url>
+        <loc>https://trulliheritage.com/trulliheritage/en/experiences/yoga</loc>
+        <image:image>
+            <image:loc>https://trulliheritage.com/experiences/wine.jpg</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://avatar.iran.liara.run/public/2</image:loc>
+        </image:image>
+        <xhtml:link rel="alternate" href="https://trulliheritage.com/trulliheritage/en/experiences/yoga" hreflang="x-default" />
+        <xhtml:link rel="alternate" href="https://trulliheritage.com/trulliheritage/en/experiences/yoga" hreflang="en" />
+    </url>
+    <url>
+        <loc>https://trulliheritage.com/trulliheritage/en/trulli/al-13</loc>
+        <image:image>
+            <image:loc>https://trulliheritage.com/trulli/al-13/PHOTO-2024-05-07-13-40-52.jpg</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://trulliheritage.com/_ipx/_/trulli/al-13/577082261.jpg</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://trulliheritage.com/_ipx/_/trulli/al-13/577082264.jpg</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://trulliheritage.com/_ipx/_/trulli/al-13/PHOTO-2024-05-07-13-40-52%208.jpg</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://trulliheritage.com/_ipx/_/trulli/al-13/PHOTO-2024-05-07-13-40-52.jpg</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://avatar.iran.liara.run/public/5</image:loc>
+        </image:image>
+        <xhtml:link rel="alternate" href="https://trulliheritage.com/trulliheritage/en/trulli/al-13" hreflang="x-default" />
+        <xhtml:link rel="alternate" href="https://trulliheritage.com/trulliheritage/en/trulli/al-13" hreflang="en" />
+    </url>
+    <url>
+        <loc>https://trulliheritage.com/trulliheritage/it/experiences/trulli-and-wine</loc>
+        <image:image>
+            <image:loc>https://trulliheritage.com/experiences/wine.jpg</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://avatar.iran.liara.run/public/5</image:loc>
+        </image:image>
+        <xhtml:link rel="alternate" href="https://trulliheritage.com/trulliheritage/it/experiences/trulli-and-wine" hreflang="x-default" />
+        <xhtml:link rel="alternate" href="https://trulliheritage.com/trulliheritage/it/experiences/trulli-and-wine" hreflang="en" />
+    </url>
+    <url>
+        <loc>https://trulliheritage.com/trulliheritage/it/trulli/al-13</loc>
+        <image:image>
+            <image:loc>https://trulliheritage.com/trulli/al-13/PHOTO-2024-05-07-13-40-52.jpg</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://trulliheritage.com/_ipx/_/trulli/al-13/577082261.jpg</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://trulliheritage.com/_ipx/_/trulli/al-13/577082264.jpg</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://trulliheritage.com/_ipx/_/trulli/al-13/PHOTO-2024-05-07-13-40-52%208.jpg</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://trulliheritage.com/_ipx/_/trulli/al-13/PHOTO-2024-05-07-13-40-52.jpg</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://avatar.iran.liara.run/public/5</image:loc>
+        </image:image>
+        <xhtml:link rel="alternate" href="https://trulliheritage.com/trulliheritage/it/trulli/al-13" hreflang="x-default" />
+        <xhtml:link rel="alternate" href="https://trulliheritage.com/trulliheritage/it/trulli/al-13" hreflang="en" />
+    </url>
+</urlset>
+<!-- XML Sitemap generated by @nuxtjs/sitemap v7.2.10 at 2025-05-21T21:57:50.778Z -->
