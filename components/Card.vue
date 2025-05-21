@@ -21,7 +21,7 @@
                 <div class="flex items-start justify-start gap-3">
 
                     <span v-for="(info, index) in structure.nightInfo" :key="`night-${index}`"
-                        class="flex items-center relative group">
+                        class="flex items-center relative group cursor-default">
                         <span>{{ info.text[0] }}</span>
                         <span class="material-icons text-gray-600 ml-2">{{ info.icon }}</span>
                         <div class="hidden group-hover:block absolute bottom-full left-1/2 -translate-x-1/2 mb-2">
@@ -34,7 +34,7 @@
                 <div class="flex items-center justify-between gap-3">
 
                     <span v-for="(amenity, index) in structure.services" :key="`service-${index}`"
-                        class="flex items-center relative group">
+                        class="flex items-center relative group cursor-default">
                         <span class="material-icons text-gray-600 text-md">{{ amenity.icon }}</span>
                         <div class="hidden group-hover:block absolute bottom-full left-1/2 -translate-x-1/2 mb-2">
                             <div :class="tooltipClasses">
@@ -43,7 +43,7 @@
                         </div>
                     </span>
                     <span v-for="(amenity, index) in structure.amenities" :key="`amenity-${index}`"
-                        class="flex items-center relative group">
+                        class="flex items-center relative group cursor-default">
                         <span class="material-icons text-gray-600 text-md">{{ amenity.icon }}</span>
                         <div class="hidden group-hover:block absolute bottom-full left-1/2 -translate-x-1/2 mb-2">
                             <div :class="tooltipClasses">

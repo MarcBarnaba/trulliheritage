@@ -6,7 +6,7 @@
         <div :class="`flex justify-${align === 'center' ? 'center' : 'between'} items-center`">
           <div v-if="title" :class="titleClass">{{ title }}</div>
           <NuxtLink v-if="showMoreBtn" :to="showMorePath">
-            <div class="rounded-full border">
+            <div class="rounded-full">
               <span class="material-icons text-white bg-gold rounded-full p-2 hover:cursor-pointer">arrow_right_alt
               </span>
             </div>

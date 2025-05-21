@@ -37,7 +37,7 @@ withDefaults(defineProps<ExpSliderProps>(), {
 .swiper-pagination {
     position: unset;
     display: flex;
-    justify-content: end;
+    justify-content: center;
     margin-top: 2rem;
     padding-right: 2rem;
 }

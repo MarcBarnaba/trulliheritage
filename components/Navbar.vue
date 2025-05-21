@@ -60,14 +60,14 @@
       <div v-if="isMenuOpen" class="text-gray-800 md:hidden mt-2 py-2 rounded-md transition-all ">
         <ul>
           <li>
-            <NuxtLink to="/trulli"
+            <NuxtLink :to="localePath('/trulli')"
               class="block px-4 py-3 text-gray-800 hover:bg-gray-100 hover:text-gold transition-colors"
               @click="isMenuOpen = false">
               {{ t('menu.trulli') }}
             </NuxtLink>
           </li>
           <li>
-            <NuxtLink to="/experiences"
+            <NuxtLink :to="localePath('/experiences')"
               class="block px-4 py-3 text-gray-800 hover:bg-gray-100 hover:text-gold transition-colors"
               @click="isMenuOpen = false">
               {{ t('menu.experiences') }}

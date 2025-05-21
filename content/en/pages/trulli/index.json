@@ -5,7 +5,7 @@
     {
       "type": "Hero",
       "props": {
-        "showTravelBar": true,
+        "showTravelBar": false,
         "slim": true,
         "imgSrc": "/global/hero.jpg",
         "title": "Trulli in Valle d'Itria",

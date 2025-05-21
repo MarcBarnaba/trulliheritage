@@ -1,6 +1,6 @@
 <template>
     <div class="w-full relative mb-4">
-        <Paragraph :title="t('gallery')" titleSize="2xl" />
+        <Paragraph align="left" class="px-8" :title="t('gallery')" titleSize="2xl" />
 
         <!-- Image Grid Container -->
         <div ref="gridContainer" :class="[

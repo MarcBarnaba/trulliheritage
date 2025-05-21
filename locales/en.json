@@ -59,5 +59,7 @@
   "error.404": "Not Found.",
   "error.500": "Server error. Try again later.",
   "error.unknown": "Unexpected Error.",
-  "error.error": "Error"
+  "error.error": "Error",
+  "checkIn": "Check-In",
+  "checkOut": "Check-Out"
 }

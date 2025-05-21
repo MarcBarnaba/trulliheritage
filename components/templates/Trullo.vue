@@ -25,7 +25,8 @@
             </div>
         </section>
 
-        <Paragraph align="left" :title="t('description')" :paragraph="trullo?.description" title-size="2xl">
+        <Paragraph class="px-8" align="left" :title="t('description')" :paragraph="trullo?.description"
+            title-size="2xl">
             <template #default>
                 <IconsMint />
             </template>
