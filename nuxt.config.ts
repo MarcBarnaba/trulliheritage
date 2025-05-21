@@ -61,6 +61,10 @@ export default defineNuxtConfig({
     }
   },
 
+  image: {
+    provider: 'static',
+  },
+
   i18n: {
     restructureDir: "",
     locales,
