@@ -8,6 +8,11 @@ export default defineNuxtConfig({
   modules: ["@nuxtjs/tailwindcss", "@nuxt/image", '@nuxtjs/i18n', "@nuxtjs/robots", "@nuxtjs/sitemap", '@nuxt/content'],
 
   app: {
+
+    baseURL: process.env.NODE_ENV === 'production'
+      ? '/trulliheritage/' // Deploy to GH Pages
+      : '/',
+
     head: {
       link: [
         // Material Icons con preconnect e preload
