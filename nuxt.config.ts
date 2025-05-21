@@ -11,7 +11,7 @@ export default defineNuxtConfig({
 
     baseURL: process.env.NODE_ENV === 'production'
       ? '/trulliheritage/' // Deploy to GH Pages
-      : '/',
+      : '',
 
     head: {
       link: [
