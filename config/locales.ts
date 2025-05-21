@@ -11,14 +11,14 @@ export const locales: LocaleObject[] = [
         file: 'en.json',
         name: 'English'
     },
-    {
-        code: 'fr',
-        file: 'fr.json',
-        name: 'Français'
-    },
-    {
-        code: 'de',
-        file: 'de.json',
-        name: 'Deutsch'
-    }
+    // {
+    //     code: 'fr',
+    //     file: 'fr.json',
+    //     name: 'Français'
+    // },
+    // {
+    //     code: 'de',
+    //     file: 'de.json',
+    //     name: 'Deutsch'
+    // }
 ]
